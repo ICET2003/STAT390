@@ -1,6 +1,8 @@
-# Employee Baseline Project (Week 2)
+# Employee Baseline Project 
 
 This repository provides a deterministic, end-to-end baseline for predicting **Current Employee Rating** from the employee dataset. This baseline does not include the **local weather** of each state in USA yet. This is a baseline for predicitng the Burout Rating with 1 being very burnout and 5 being productive.
+
+The final project intends to include the weather dataset into predictive analysis, hoping to calculate the SHAP value of each regressor to prove the importance of environment on burning out. The final model should be more accurated than the baseline model to be considered successful.
 
 ## Target
 - **Outcome variable:** `Current Employee Rating`

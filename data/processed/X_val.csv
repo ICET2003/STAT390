@@ -1,0 +1,451 @@
+,EmployeeType,PayZone,EmployeeClassificationType,DepartmentType,Division,State,JobFunctionDescription,GenderCode,LocationCode,RaceDesc,MaritalDesc,Age_Years,Is_Active
+2411,Part-Time,Zone A,Temporary,Production       ,General - Sga,MA,Director,Male,93005,Black,Single,,1
+964,Contract,Zone A,Temporary,Production       ,Wireless,MA,Supervisor,Female,2093,Other,Single,,1
+16,Full-Time,Zone C,Part-Time,IT/IS,Project Management - Con,KY,Coordinator,Male,2621,Asian,Widowed,30.41,1
+1173,Contract,Zone A,Full-Time,Production       ,General - Con,MA,Technician,Female,23314,Hispanic,Married,,1
+2597,Contract,Zone A,Full-Time,Production       ,Project Management - Con,MA,Supervisor,Female,51804,Hispanic,Widowed,,1
+2522,Contract,Zone A,Temporary,Production       ,Splicing,MA,Splicer,Female,92718,Hispanic,Single,67.73,0
+2476,Part-Time,Zone A,Full-Time,Production       ,Engineers,MA,Engineer,Male,14416,Asian,Single,,1
+121,Part-Time,Zone A,Full-Time,Sales,General - Con,KY,Technician,Female,40135,White,Single,,1
+536,Part-Time,Zone B,Temporary,IT/IS,Field Operations,MA,Foreman,Female,39060,Black,Widowed,,1
+1779,Contract,Zone A,Temporary,Production       ,Field Operations,MA,Tower Hand,Female,40461,Other,Widowed,82.34,1
+2486,Full-Time,Zone B,Part-Time,Production       ,Splicing,MA,Splicer,Male,70198,Hispanic,Divorced,,1
+339,Part-Time,Zone A,Part-Time,Production       ,Yard (Material Handling),MA,Manager,Female,10110,Black,Widowed,81.25,1
+2832,Full-Time,Zone B,Full-Time,Production       ,Field Operations,MA,Tower Hand,Male,71536,Hispanic,Single,,0
+643,Full-Time,Zone C,Temporary,Software Engineering,General - Sga,MA,Project Manager,Male,22326,Black,Married,26.73,1
+1735,Full-Time,Zone B,Temporary,Production       ,Project Management - Con,MA,Project Manager,Female,53999,Asian,Married,54.66,1
+922,Full-Time,Zone B,Part-Time,Admin Offices,Safety,MA,Manager,Female,33234,White,Divorced,,1
+1930,Contract,Zone B,Temporary,Production       ,General - Con,MA,Foreman,Female,48133,Black,Married,,1
+1728,Part-Time,Zone B,Full-Time,Production       ,Finance & Accounting,MA,Coordinator,Female,72455,Other,Single,,0
+2259,Contract,Zone C,Part-Time,Sales,Project Management - Con,MA,Technician,Male,56247,Other,Single,69.33,1
+1555,Full-Time,Zone C,Temporary,Production       ,General - Sga,MA,Manager,Female,48632,Hispanic,Married,,1
+2652,Part-Time,Zone B,Part-Time,Production       ,Aerial,MA,Engineer,Female,54361,Black,Single,51.32,0
+382,Part-Time,Zone B,Part-Time,IT/IS,Field Operations,MA,Foreman,Male,2343,Hispanic,Single,,1
+334,Contract,Zone A,Full-Time,Production       ,General - Sga,MA,Assistant,Female,75880,Black,Married,,1
+2249,Part-Time,Zone C,Part-Time,Sales,Engineers,AL,Engineer,Male,19248,Asian,Single,52.98,1
+2583,Part-Time,Zone C,Temporary,Production       ,General - Con,MA,Flagger,Male,33080,Other,Married,,0
+1640,Full-Time,Zone C,Part-Time,Production       ,Engineers,MA,Project Manager,Female,97487,White,Divorced,,1
+819,Part-Time,Zone B,Temporary,Production       ,Field Operations,MA,Ceo,Male,5254,Black,Widowed,,0
+1516,Contract,Zone A,Part-Time,Sales,Shop (Fleet),PA,Mechanic,Female,34057,White,Widowed,,0
+1898,Part-Time,Zone A,Temporary,Production       ,Field Operations,MA,Laborer,Female,60295,Asian,Divorced,,1
+1686,Part-Time,Zone B,Full-Time,Production       ,General - Con,MA,Clerk,Female,9677,White,Widowed,,1
+143,Full-Time,Zone B,Temporary,Production       ,Fielders,MA,Engineer,Female,2445,Asian,Married,,0
+876,Contract,Zone A,Full-Time,Production       ,Finance & Accounting,MA,Administration,Female,35973,Hispanic,Single,68.0,1
+1922,Part-Time,Zone C,Full-Time,Production       ,General - Con,MA,Laborer,Male,38286,Black,Widowed,68.82,1
+2908,Part-Time,Zone B,Temporary,Production       ,Field Operations,MA,Driller,Male,38014,Other,Divorced,32.5,0
+83,Part-Time,Zone A,Full-Time,Sales,General - Con,KY,Laborer,Female,65329,Hispanic,Married,,1
+272,Part-Time,Zone B,Temporary,Production       ,Engineers,MA,Engineer,Male,48065,Asian,Divorced,,0
+1503,Full-Time,Zone C,Temporary,Production       ,General - Con,MA,Technician,Female,70906,Asian,Single,,1
+1408,Part-Time,Zone B,Temporary,Production       ,Field Operations,MA,Laborer,Female,5480,Asian,Single,,1
+2338,Full-Time,Zone C,Full-Time,Production       ,Wireline Construction,MA,Administrative,Male,2045,Black,Widowed,57.32,1
+1439,Contract,Zone A,Temporary,Production       ,Field Operations,MA,Operator,Male,81653,Asian,Divorced,,1
+2980,Part-Time,Zone C,Temporary,Production       ,Field Operations,MA,Construction Manager,Female,18000,Asian,Single,,1
+1718,Full-Time,Zone A,Full-Time,Production       ,General - Sga,MA,Coordinator,Female,58886,Other,Divorced,35.73,1
+159,Part-Time,Zone B,Full-Time,Production       ,People Services,MA,Manager,Female,24711,Hispanic,Single,,1
+791,Full-Time,Zone B,Temporary,Production       ,General - Con,MA,Locator,Female,32620,Black,Married,,1
+1856,Part-Time,Zone B,Temporary,Admin Offices,Field Operations,MA,Technician,Male,2045,White,Single,,0
+951,Full-Time,Zone C,Part-Time,Admin Offices,Fielders,MA,Engineer,Female,12640,White,Married,49.58,1
+1143,Contract,Zone C,Part-Time,Production       ,General - Con,MA,Laborer,Male,79576,Asian,Single,33.0,1
+6,Full-Time,Zone B,Temporary,Sales,General - Eng,CA,Technician,Female,90007,Hispanic,Divorced,82.98,1
+1727,Part-Time,Zone A,Temporary,Production       ,Field Operations,MA,Driller,Male,3793,Other,Married,49.4,1
+1404,Part-Time,Zone B,Temporary,Production       ,Isp,MA,Technician,Female,40762,Asian,Widowed,,0
+2017,Part-Time,Zone C,Part-Time,IT/IS,Wireline Construction,MA,Traffic,Female,53240,Black,Single,67.48,1
+53,Full-Time,Zone C,Temporary,Sales,Catv,TX,Supervisor,Female,75671,Black,Widowed,78.32,0
+355,Full-Time,Zone B,Temporary,Production       ,Field Operations,MA,Driver,Male,92706,Asian,Widowed,,0
+2599,Contract,Zone C,Part-Time,Production       ,Project Management - Con,MA,Lineman,Female,80801,Asian,Divorced,81.65,1
+1825,Contract,Zone B,Part-Time,IT/IS,Field Operations,MA,Coordinator,Male,73648,White,Widowed,51.06,1
+1209,Contract,Zone B,Part-Time,Admin Offices,Aerial,MA,Lineman,Male,6067,White,Single,26.48,1
+92,Part-Time,Zone C,Temporary,Sales,Aerial,CA,Groundman,Male,17123,Hispanic,Widowed,,1
+1052,Part-Time,Zone B,Full-Time,Production       ,Project Management - Con,MA,Coordinator,Female,31819,White,Married,73.72,1
+2835,Full-Time,Zone A,Full-Time,Production       ,Catv,MA,Laborer,Female,69534,Black,Divorced,,1
+1995,Part-Time,Zone A,Temporary,Production       ,General - Con,MA,Laborer,Male,86374,Hispanic,Widowed,,0
+1328,Part-Time,Zone B,Full-Time,Production       ,General - Con,MA,Foreman,Male,45449,Other,Widowed,30.65,1
+2854,Contract,Zone B,Full-Time,Production       ,General - Con,MA,Laborer,Male,65633,Hispanic,Divorced,,1
+2821,Contract,Zone B,Part-Time,Production       ,General - Con,MA,Clerical,Female,27168,Hispanic,Single,,1
+1406,Part-Time,Zone B,Full-Time,Production       ,Field Operations,MA,Technician,Female,3284,White,Married,,1
+2312,Contract,Zone A,Part-Time,Sales,General - Con,ID,Technician,Male,82332,Black,Single,,1
+1423,Contract,Zone A,Full-Time,Production       ,Aerial,MA,Lineman,Female,78073,White,Married,,0
+1059,Part-Time,Zone A,Full-Time,Production       ,Engineers,MA,Engineer,Female,53726,Hispanic,Divorced,,1
+1072,Contract,Zone A,Full-Time,Production       ,General - Con,MA,Operator,Female,94816,Other,Married,,1
+2391,Part-Time,Zone B,Temporary,Production       ,Fielders,MA,Engineer,Male,9992,Hispanic,Single,,1
+774,Contract,Zone A,Part-Time,Production       ,General - Con,MA,Flagger,Male,53450,Other,Divorced,,0
+1881,Full-Time,Zone A,Full-Time,Production       ,Field Operations,MA,Coordinator,Male,20854,Other,Divorced,25.33,1
+847,Contract,Zone A,Full-Time,Production       ,Engineers,MA,Engineer,Female,2006,Black,Single,49.56,1
+684,Full-Time,Zone A,Part-Time,Production       ,Splicing,MA,Splicer,Female,2127,White,Widowed,,0
+632,Part-Time,Zone C,Full-Time,Software Engineering,Engineers,MA,Engineer,Female,63959,Asian,Widowed,,1
+1811,Part-Time,Zone B,Temporary,IT/IS,Project Management - Con,CT,Purchasing,Male,55252,Hispanic,Widowed,,1
+2974,Contract,Zone A,Full-Time,Production       ,Field Operations,MA,Laborer,Male,3403,Hispanic,Married,51.16,0
+2493,Full-Time,Zone A,Part-Time,Production       ,Field Operations,MA,Technician,Male,80589,Hispanic,Single,65.17,1
+2971,Part-Time,Zone A,Full-Time,Production       ,General - Con,MA,Technician,Female,63776,Other,Single,68.14,1
+1588,Part-Time,Zone B,Part-Time,Production       ,Engineers,MA,Engineer,Female,23634,White,Widowed,32.67,1
+1948,Contract,Zone B,Full-Time,IT/IS,General - Con,MA,Foreman,Male,90110,Black,Single,66.89,1
+1726,Contract,Zone C,Part-Time,Production       ,Project Management - Con,MA,Model Assistant,Female,58613,Other,Married,80.23,1
+127,Part-Time,Zone C,Temporary,Sales,People Services,IN,Cpo,Male,78385,Asian,Widowed,,1
+1212,Full-Time,Zone A,Full-Time,IT/IS,Field Operations,MA,Technician,Male,87307,Black,Married,66.25,0
+2988,Full-Time,Zone A,Part-Time,Production       ,Splicing,MA,Driver,Male,23971,Hispanic,Widowed,,0
+82,Part-Time,Zone C,Full-Time,Sales,General - Sga,KY,Project Controls,Female,75993,Black,Married,47.73,1
+848,Full-Time,Zone B,Part-Time,Production       ,Aerial,MA,Splicer,Female,55846,Other,Single,,1
+2396,Contract,Zone B,Part-Time,Production       ,General - Con,MA,Operator,Female,59827,White,Divorced,39.47,1
+1989,Contract,Zone C,Full-Time,Production       ,General - Con,MA,Laborer,Male,91822,Asian,Single,30.41,1
+1955,Part-Time,Zone C,Temporary,Production       ,Catv,MA,Laborer,Male,59652,Asian,Single,81.22,1
+1900,Full-Time,Zone A,Part-Time,Production       ,Field Operations,MA,Laborer,Male,43033,Black,Married,,1
+118,Full-Time,Zone C,Temporary,IT/IS,Field Operations,OR,Locator,Female,9733,Black,Widowed,,1
+1895,Contract,Zone C,Part-Time,Production       ,Field Operations,MA,Driller,Female,73596,Asian,Divorced,,1
+2648,Full-Time,Zone B,Part-Time,Production       ,Fielders,MA,Engineer,Female,18316,Other,Single,55.33,1
+2630,Full-Time,Zone A,Temporary,Production       ,General - Con,MA,Laborer,Female,58387,Black,Divorced,37.0,0
+284,Part-Time,Zone A,Temporary,Production       ,Finance & Accounting,MA,Administrative,Female,36588,Black,Single,43.84,1
+2194,Part-Time,Zone B,Temporary,Sales,Technology / It,AZ,Manager,Male,57305,White,Single,82.57,1
+2125,Full-Time,Zone B,Temporary,Software Engineering,Project Management - Con,MA,Foreman,Male,72168,White,Single,70.81,1
+938,Contract,Zone C,Part-Time,Admin Offices,Field Operations,MA,Lineman,Male,64340,Hispanic,Widowed,,1
+109,Contract,Zone C,Temporary,Sales,General - Sga,GA,Administrative,Female,89169,Black,Single,35.92,1
+2790,Contract,Zone B,Full-Time,Production       ,General - Con,MA,Technician,Female,1810,White,Single,,0
+372,Full-Time,Zone A,Temporary,Production       ,Executive,MA,Director,Male,95984,Hispanic,Single,,1
+72,Part-Time,Zone C,Temporary,Sales,Field Operations,KY,Technician,Female,61457,Asian,Widowed,,1
+57,Part-Time,Zone B,Full-Time,Sales,General - Con,CO,Model Assistant,Male,64036,Other,Single,,1
+1275,Contract,Zone A,Part-Time,IT/IS,Project Management - Con,MA,Contracts,Female,49479,Other,Single,35.4,1
+837,Full-Time,Zone C,Full-Time,Production       ,Field Operations,MA,Director,Female,28097,Hispanic,Married,,1
+909,Full-Time,Zone A,Part-Time,Admin Offices,Field Operations,MA,Technician,Female,88247,Black,Married,,1
+369,Contract,Zone A,Part-Time,Production       ,General - Con,MA,Laborer,Female,82019,Hispanic,Married,,1
+2483,Part-Time,Zone A,Full-Time,Production       ,Field Operations,MA,Laborer,Female,89600,White,Divorced,78.25,1
+2162,Contract,Zone A,Temporary,Sales,Fielders,AZ,Engineer,Male,62646,Asian,Single,,1
+2319,Full-Time,Zone A,Full-Time,Sales,Project Management - Con,MA,Supervisor,Female,39119,Hispanic,Widowed,,0
+1625,Part-Time,Zone B,Part-Time,Production       ,Field Operations,MA,Laborer,Female,61020,Hispanic,Married,68.07,1
+1424,Full-Time,Zone B,Temporary,Production       ,General - Con,MA,Laborer,Female,57276,Hispanic,Single,,0
+1479,Part-Time,Zone B,Full-Time,Production       ,Field Operations,MA,Laborer,Male,11009,Hispanic,Widowed,77.82,1
+2840,Contract,Zone C,Part-Time,Production       ,Splicing,MA,Laborer,Female,52402,Other,Single,61.48,1
+2972,Full-Time,Zone B,Full-Time,Production       ,Aerial,MA,Lineman,Female,16715,White,Widowed,,1
+2147,Full-Time,Zone C,Full-Time,Sales,Billable Consultants,UT,Engineer,Male,84111,Hispanic,Widowed,,1
+1004,Full-Time,Zone B,Full-Time,Production       ,Field Operations,MA,Laborer,Female,16451,Black,Widowed,,1
+2171,Part-Time,Zone A,Temporary,Sales,General - Con,ID,Splicer,Male,8573,Asian,Divorced,60.65,1
+1252,Part-Time,Zone C,Part-Time,Admin Offices,Engineers,MA,Project Manager,Male,42691,Black,Widowed,,1
+1138,Full-Time,Zone C,Full-Time,Production       ,Field Operations,MA,Foreman,Male,6954,Asian,Widowed,,1
+1329,Part-Time,Zone A,Part-Time,Production       ,Splicing,MA,Operator,Male,32636,Black,Widowed,,1
+238,Full-Time,Zone B,Temporary,Production       ,Field Operations,MA,Field Technician,Male,54319,Asian,Married,,1
+1651,Full-Time,Zone B,Temporary,Production       ,Field Operations,MA,Laborer,Female,50499,White,Single,,0
+2480,Full-Time,Zone C,Part-Time,Production       ,Yard (Material Handling),MA,Supervisor,Male,38430,White,Widowed,62.75,1
+2511,Full-Time,Zone C,Full-Time,Production       ,Aerial,MA,Lineman,Male,43780,White,Married,52.14,1
+2059,Part-Time,Zone A,Temporary,IT/IS,General - Con,MA,Coordinator,Male,1915,Black,Married,,1
+1795,Part-Time,Zone A,Temporary,IT/IS,Wireline Construction,MA,Laborer,Female,77955,Hispanic,Widowed,,1
+1797,Full-Time,Zone A,Temporary,IT/IS,Wireline Construction,CT,Groundman,Female,8958,Asian,Divorced,,1
+1042,Full-Time,Zone B,Temporary,Production       ,Field Operations,MA,Lineman,Female,59499,Asian,Married,,1
+2317,Contract,Zone C,Full-Time,Sales,Field Operations,VT,Laborer,Female,25145,Asian,Married,,1
+2128,Full-Time,Zone A,Temporary,IT/IS,Wireless,MA,Foreman,Male,6633,Other,Widowed,,1
+1137,Contract,Zone A,Full-Time,Production       ,General - Con,MA,Technician,Male,14685,Other,Widowed,33.75,1
+2948,Full-Time,Zone B,Full-Time,Production       ,Engineers,MA,Program Manager,Female,58194,Black,Divorced,,0
+320,Part-Time,Zone C,Temporary,Production       ,Technology / It,MA,Technician,Male,56563,Black,Widowed,,0
+827,Contract,Zone B,Full-Time,Production       ,General - Con,MA,Groundman,Female,87263,White,Married,74.49,1
+2725,Contract,Zone C,Temporary,Production       ,Field Operations,MA,Laborer,Female,27163,Black,Widowed,,1
+1715,Contract,Zone A,Temporary,Production       ,Engineers,MA,Engineer,Female,40697,Other,Widowed,,1
+2275,Contract,Zone B,Full-Time,Sales,Aerial,MA,Foreman,Male,80318,Asian,Married,,1
+2177,Contract,Zone C,Full-Time,Sales,Aerial,MA,Engineer,Male,68833,Other,Divorced,37.25,1
+1656,Contract,Zone C,Temporary,Production       ,Engineers,MA,Technician,Female,92893,Hispanic,Divorced,,1
+1570,Part-Time,Zone B,Full-Time,Production       ,Wireline Construction,MA,Project Manager,Female,64180,Asian,Divorced,34.32,1
+743,Part-Time,Zone C,Full-Time,Production       ,Underground,MA,Laborer,Female,53112,Black,Single,,1
+96,Full-Time,Zone A,Temporary,Sales,General - Con,KY,Laborer,Female,23092,Other,Single,,1
+666,Contract,Zone B,Part-Time,Production       ,Engineers,MA,Engineer,Female,1886,Asian,Widowed,,1
+1764,Contract,Zone C,Part-Time,Production       ,Engineers,MA,Engineer,Female,47342,Asian,Married,,1
+2746,Contract,Zone A,Part-Time,Production       ,Billable Consultants,MA,Engineer,Female,24597,Asian,Married,,1
+1650,Full-Time,Zone A,Temporary,Production       ,General - Con,MA,Foreman,Female,50403,Asian,Married,,1
+2763,Contract,Zone C,Part-Time,Production       ,General - Con,MA,Administration,Male,89125,White,Divorced,26.25,1
+1441,Part-Time,Zone A,Full-Time,Production       ,Field Operations,MA,Laborer,Male,6756,Black,Single,,1
+1163,Part-Time,Zone A,Full-Time,Production       ,Wireline Construction,MA,Foreman,Male,30814,Black,Single,41.31,1
+2380,Part-Time,Zone A,Part-Time,Production       ,Wireline Construction,MA,Driver,Female,55399,White,Married,,0
+611,Contract,Zone B,Part-Time,Software Engineering,Field Operations,MA,Crew Leader,Male,14886,Hispanic,Married,53.74,1
+442,Full-Time,Zone A,Temporary,IT/IS,Field Operations,MA,Drafter,Male,49132,Hispanic,Divorced,47.24,1
+1130,Part-Time,Zone B,Temporary,Production       ,Project Management - Con,MA,Project Manager,Male,25683,Hispanic,Divorced,,0
+2278,Full-Time,Zone B,Temporary,Sales,General - Con,AZ,Supervisor,Female,57908,Hispanic,Divorced,,1
+2443,Part-Time,Zone B,Part-Time,Production       ,Sales & Marketing,MA,Vp,Male,32806,Black,Married,74.4,1
+2189,Full-Time,Zone A,Part-Time,Sales,Engineers,WA,Engineer,Female,62733,Black,Married,,1
+1704,Part-Time,Zone C,Part-Time,Production       ,Field Operations,MA,Laborer,Female,88590,Black,Widowed,73.08,0
+1101,Part-Time,Zone A,Part-Time,Production       ,Field Operations,MA,Laborer,Female,47571,Asian,Widowed,,1
+1857,Part-Time,Zone C,Part-Time,IT/IS,Wireline Construction,MA,Foreman,Female,2067,Other,Widowed,,1
+2810,Contract,Zone B,Temporary,Production       ,General - Eng,MA,Drafter,Male,69369,White,Married,37.39,1
+323,Full-Time,Zone C,Part-Time,Production       ,Engineers,MA,Engineer,Male,49299,Black,Single,,1
+2490,Contract,Zone A,Part-Time,Production       ,Field Operations,MA,Technician,Male,79382,Other,Widowed,,1
+1540,Part-Time,Zone A,Part-Time,Production       ,General - Con,MA,Flagger,Female,2453,Other,Single,30.14,1
+247,Part-Time,Zone C,Part-Time,Production       ,Engineers,MA,Engineer,Female,39141,Other,Single,28.99,0
+1495,Full-Time,Zone A,Part-Time,Production       ,General - Con,MA,Technician,Male,89245,Asian,Divorced,66.17,1
+2299,Contract,Zone B,Full-Time,Sales,Wireline Construction,NY,Groundman,Male,20036,Asian,Single,,1
+571,Full-Time,Zone B,Full-Time,IT/IS,Yard (Material Handling),TX,Administrative,Female,82557,Other,Married,,0
+2857,Contract,Zone A,Part-Time,Production       ,Fielders,MA,Technician,Male,22735,Other,Divorced,,0
+2325,Part-Time,Zone A,Temporary,Production       ,General - Con,MA,Flagger,Male,2478,Hispanic,Divorced,,1
+558,Part-Time,Zone A,Part-Time,IT/IS,People Services,TX,Director,Male,26193,White,Widowed,,0
+1098,Full-Time,Zone B,Temporary,Production       ,General - Con,MA,Laborer,Female,42288,Asian,Widowed,,1
+2989,Full-Time,Zone B,Part-Time,Production       ,Finance & Accounting,MA,Director,Male,46381,Asian,Married,,1
+1415,Part-Time,Zone B,Temporary,Production       ,General - Con,MA,Coordinator,Male,20467,Asian,Divorced,26.24,1
+1066,Full-Time,Zone B,Temporary,Production       ,Field Operations,MA,Laborer,Male,57107,Black,Married,,1
+1891,Part-Time,Zone A,Temporary,Production       ,Field Operations,MA,Laborer,Female,57512,White,Widowed,,1
+2900,Contract,Zone C,Full-Time,Production       ,Fielders,MA,Technician,Female,91044,Hispanic,Widowed,,1
+212,Contract,Zone C,Full-Time,Production       ,Field Operations,MA,Runner,Female,8655,Hispanic,Divorced,58.42,0
+1257,Contract,Zone A,Part-Time,IT/IS,Engineers,MA,Engineer,Male,18894,Hispanic,Widowed,61.5,0
+2716,Full-Time,Zone A,Temporary,Production       ,Aerial,MA,Lineman,Female,32652,Black,Widowed,,1
+491,Contract,Zone A,Full-Time,IT/IS,Field Operations,MA,Laborer,Female,48262,Asian,Widowed,,1
+40,Contract,Zone A,Part-Time,Sales,Fielders,KY,Engineer,Female,94333,Asian,Divorced,,1
+1692,Part-Time,Zone A,Temporary,Production       ,General - Con,MA,Foreman,Female,72491,White,Married,83.23,1
+1816,Full-Time,Zone A,Part-Time,IT/IS,Finance & Accounting,CT,Accounting,Female,90316,Other,Married,,1
+2783,Full-Time,Zone A,Full-Time,Production       ,Aerial,MA,Lineman,Female,2050,Hispanic,Divorced,,1
+1648,Contract,Zone A,Full-Time,Production       ,Project Management - Con,MA,Manager,Female,88221,Other,Married,,1
+790,Full-Time,Zone B,Part-Time,Production       ,Wireline Construction,MA,Vp,Male,52300,Asian,Single,,0
+1472,Contract,Zone C,Full-Time,Production       ,Field Operations,MA,Laborer,Female,57914,Asian,Married,42.57,1
+2585,Contract,Zone A,Temporary,Production       ,General - Sga,MA,Manager,Female,3143,Asian,Single,,0
+398,Full-Time,Zone A,Part-Time,IT/IS,Field Operations,MA,Tower Hand,Male,97413,Black,Married,,1
+1668,Full-Time,Zone A,Full-Time,Production       ,Project Management - Con,MA,Manager,Female,60616,Other,Divorced,,1
+2178,Full-Time,Zone C,Part-Time,Sales,Wireline Construction,AZ,Supervisor,Male,29838,Black,Married,56.15,1
+1649,Full-Time,Zone A,Full-Time,Production       ,Field Operations,MA,Project Manager,Female,83667,Black,Divorced,,1
+2554,Part-Time,Zone B,Full-Time,Production       ,Aerial,MA,Foreman,Female,2044,Black,Single,,1
+1934,Full-Time,Zone C,Full-Time,Production       ,Project Management - Con,MA,Supervisor,Female,66281,Asian,Divorced,28.64,0
+10,Contract,Zone B,Temporary,Sales,Field Operations,IN,Technician,Female,46204,Other,Single,,1
+1432,Contract,Zone A,Part-Time,Production       ,Field Operations,MA,Field Technician,Female,66623,Hispanic,Married,,1
+1289,Contract,Zone C,Part-Time,IT/IS,General - Con,MA,Flagger,Female,21457,Asian,Widowed,,1
+2773,Part-Time,Zone B,Temporary,Production       ,Billable Consultants,MA,Engineer,Male,2138,Asian,Married,,1
+2955,Part-Time,Zone C,Temporary,Production       ,Field Operations,MA,Administrator,Male,59153,Other,Divorced,,1
+950,Part-Time,Zone A,Full-Time,Admin Offices,General - Con,MA,Technician,Female,67773,White,Divorced,,1
+499,Full-Time,Zone C,Full-Time,IT/IS,Wireless,MA,Supervisor,Female,47528,Hispanic,Single,,1
+2843,Full-Time,Zone B,Full-Time,Production       ,Splicing,MA,Technician,Male,88948,Asian,Single,66.33,1
+2671,Full-Time,Zone A,Full-Time,Production       ,Fielders,MA,Technician,Male,20436,Black,Widowed,80.32,1
+2670,Part-Time,Zone C,Temporary,Production       ,Project Management - Con,MA,Administrator,Female,97514,White,Married,63.15,0
+2355,Full-Time,Zone C,Temporary,Production       ,General - Con,MA,Laborer,Female,14142,Black,Single,,1
+1919,Part-Time,Zone A,Full-Time,Production       ,Field Operations,MA,Technician,Female,9394,Hispanic,Widowed,,1
+129,Full-Time,Zone B,Temporary,Sales,Wireline Construction,CA,Vp,Male,86009,White,Single,,1
+2674,Full-Time,Zone B,Full-Time,Production       ,General - Con,MA,Technician,Female,79029,Asian,Single,63.33,1
+504,Part-Time,Zone A,Temporary,IT/IS,Engineers,MA,Drafter,Male,34001,Black,Widowed,,1
+1202,Part-Time,Zone B,Full-Time,IT/IS,Field Operations,MA,Engineer,Female,2970,Hispanic,Married,78.75,0
+2321,Full-Time,Zone C,Full-Time,Production       ,General - Sga,MA,Laborer,Female,1801,Hispanic,Widowed,,1
+1850,Contract,Zone B,Temporary,Production       ,Field Operations,MA,Technician,Female,1731,Hispanic,Widowed,,1
+1975,Full-Time,Zone C,Full-Time,Production       ,Shop (Fleet),MA,Supervisor,Female,36118,Black,Widowed,,0
+702,Full-Time,Zone B,Part-Time,Production       ,Field Operations,MA,Tower Hand,Female,73131,Other,Married,,0
+1590,Full-Time,Zone B,Part-Time,Production       ,Aerial,MA,Laborer,Female,10719,Black,Single,,1
+1371,Part-Time,Zone A,Full-Time,Production       ,Splicing,MA,Splicer,Female,34441,Black,Widowed,39.47,1
+399,Part-Time,Zone B,Full-Time,IT/IS,Field Operations,MA,Laborer,Male,21759,Asian,Divorced,23.16,1
+2521,Contract,Zone B,Temporary,Production       ,Shop (Fleet),MA,Manager,Male,10150,Other,Single,,0
+934,Full-Time,Zone A,Full-Time,Admin Offices,Aerial,MA,Supervisor,Female,18484,Black,Married,,0
+61,Contract,Zone B,Full-Time,Sales,Wireline Construction,KY,Lineman,Female,52499,Asian,Single,27.06,1
+2646,Contract,Zone A,Part-Time,Production       ,General - Con,MA,Laborer,Female,27147,Black,Single,,0
+2622,Part-Time,Zone A,Temporary,Production       ,General - Con,MA,Laborer,Female,96062,Asian,Married,76.07,1
+285,Part-Time,Zone C,Temporary,Production       ,Field Operations,MA,Technician,Male,33658,Asian,Married,68.83,0
+220,Part-Time,Zone A,Part-Time,Production       ,Engineers,MA,Engineer,Female,20847,Black,Single,,0
+1387,Full-Time,Zone A,Part-Time,Production       ,Wireline Construction,MA,Laborer,Female,43420,Black,Widowed,44.41,1
+954,Full-Time,Zone A,Temporary,IT/IS,Aerial,MA,Foreman,Female,71974,Other,Single,24.97,1
+1982,Full-Time,Zone B,Full-Time,IT/IS,Engineers,MA,Program Manager,Female,91289,White,Single,,1
+2679,Part-Time,Zone A,Temporary,Production       ,Field Operations,MA,Warehouse Manager,Male,33599,Hispanic,Divorced,,1
+145,Contract,Zone A,Part-Time,Production       ,Fielders,MA,Engineer,Male,2747,White,Single,30.49,1
+1749,Full-Time,Zone B,Full-Time,Production       ,Field Operations,MA,Foreman,Female,4056,Asian,Married,,1
+2756,Full-Time,Zone A,Temporary,Production       ,Engineers,MA,Technician,Male,40809,Other,Single,,0
+1754,Contract,Zone A,Temporary,Production       ,Field Operations,MA,Foreman,Female,94011,Black,Single,,1
+2577,Full-Time,Zone B,Full-Time,Production       ,General - Con,MA,Laborer,Female,77466,Asian,Divorced,,1
+2633,Part-Time,Zone A,Part-Time,Production       ,Yard (Material Handling),MA,Coordinator,Male,13893,Asian,Widowed,73.84,1
+2537,Part-Time,Zone B,Full-Time,Production       ,Field Operations,MA,Driller,Female,88998,Other,Divorced,66.9,1
+1906,Full-Time,Zone C,Temporary,IT/IS,Yard (Material Handling),MA,Associate,Female,17611,Asian,Divorced,,1
+8,Contract,Zone B,Part-Time,Sales,Executive,TX,Executive Assistant,Male,78789,Black,Widowed,,1
+894,Contract,Zone A,Full-Time,Admin Offices,Project Management - Con,MA,Vp,Male,1460,Black,Single,,1
+1159,Full-Time,Zone C,Full-Time,Production       ,General - Con,MA,Technician,Female,16737,Hispanic,Widowed,51.67,1
+2829,Part-Time,Zone B,Part-Time,Production       ,General - Con,MA,Flagger,Male,4750,Black,Divorced,,1
+610,Part-Time,Zone C,Full-Time,Software Engineering,Fielders,MA,Engineer,Male,4876,Other,Widowed,,0
+375,Full-Time,Zone A,Full-Time,Production       ,Field Operations,MA,Project Manager,Male,65896,White,Divorced,,1
+538,Contract,Zone B,Part-Time,IT/IS,General - Con,MA,Laborer,Female,12883,Other,Married,26.97,1
+591,Part-Time,Zone A,Part-Time,Admin Offices,General - Con,MA,Laborer,Female,87646,White,Married,,1
+2050,Contract,Zone A,Full-Time,Sales,Field Operations,RI,Laborer,Female,92396,Asian,Divorced,,1
+1517,Part-Time,Zone A,Full-Time,Sales,Field Operations,PA,Technician,Female,80132,Asian,Married,,1
+1122,Part-Time,Zone C,Full-Time,Production       ,Executive,MA,Executive,Female,25854,Other,Married,,1
+1698,Full-Time,Zone B,Part-Time,Production       ,Engineers,MA,Project Manager,Female,1514,White,Divorced,,1
+1878,Part-Time,Zone A,Full-Time,Production       ,Field Operations,MA,Laborer,Female,18379,White,Divorced,54.81,1
+351,Full-Time,Zone A,Full-Time,Production       ,Wireline Construction,MA,Groundman,Male,30753,Other,Married,32.33,1
+1290,Part-Time,Zone B,Part-Time,IT/IS,General - Con,MA,Model Assistant,Male,49370,Asian,Widowed,,1
+717,Part-Time,Zone B,Part-Time,Production       ,Wireline Construction,MA,Project Manager,Female,12711,Asian,Single,,1
+1685,Part-Time,Zone B,Temporary,Production       ,Engineers,MA,Technician,Female,65114,Other,Widowed,,1
+1397,Contract,Zone B,Temporary,Production       ,Yard (Material Handling),MA,Vp,Male,69340,Other,Married,64.91,1
+609,Part-Time,Zone A,Part-Time,Admin Offices,Field Operations,MA,Foreman,Male,15346,Asian,Single,31.4,1
+2056,Part-Time,Zone A,Temporary,IT/IS,Fielders,MA,Engineer,Male,2134,Black,Divorced,,1
+1077,Full-Time,Zone C,Full-Time,Production       ,Engineers,MA,Technician,Female,11962,Other,Married,,1
+2140,Full-Time,Zone B,Part-Time,IT/IS,Field Operations,MA,Foreman,Male,51819,Black,Widowed,,1
+2085,Part-Time,Zone B,Temporary,Software Engineering,Field Operations,MA,Laborer,Male,25059,Hispanic,Widowed,57.58,1
+373,Contract,Zone C,Part-Time,Production       ,General - Sga,MA,Administrator,Male,31864,Other,Married,74.31,1
+2192,Contract,Zone A,Temporary,Sales,Field Operations,MA,Laborer,Male,36412,Hispanic,Divorced,78.58,1
+2328,Contract,Zone B,Temporary,Production       ,General - Con,MA,Technician,Male,1701,Other,Single,,1
+1127,Full-Time,Zone B,Part-Time,Production       ,Technology / It,MA,Project Manager,Male,73854,White,Widowed,,0
+2869,Part-Time,Zone C,Full-Time,Production       ,Field Operations,MA,Foreman,Male,24886,White,Married,77.48,0
+308,Contract,Zone C,Temporary,Production       ,Wireless,MA,Project Manager,Male,81455,White,Married,61.15,1
+2063,Contract,Zone A,Part-Time,IT/IS,General - Con,MA,Laborer,Male,5891,Other,Widowed,,1
+1654,Part-Time,Zone A,Temporary,Production       ,Engineers,MA,Supervisor,Female,84354,Asian,Married,36.41,1
+974,Contract,Zone B,Part-Time,Production       ,Splicing,MA,Lineman,Male,2451,White,Single,,1
+1319,Full-Time,Zone A,Full-Time,Production       ,General - Sga,MA,Vp,Male,2451,Hispanic,Widowed,62.58,1
+438,Part-Time,Zone C,Temporary,Production       ,Sales & Marketing,MA,Vp,Male,9209,Asian,Single,61.82,1
+2447,Part-Time,Zone A,Full-Time,Production       ,Fielders,MA,Engineer,Male,26011,White,Divorced,71.06,1
+2735,Part-Time,Zone A,Temporary,Production       ,Isp,MA,Manager,Male,57257,White,Single,,1
+1507,Contract,Zone B,Full-Time,Sales,General - Eng,PA,Supervisor,Female,19444,Other,Widowed,,0
+2945,Contract,Zone C,Part-Time,Production       ,Project Management - Con,MA,Manager,Female,94040,Asian,Divorced,,0
+2453,Contract,Zone A,Temporary,Production       ,General - Con,MA,Safety Manager,Female,89647,Black,Single,,1
+2010,Full-Time,Zone A,Full-Time,Production       ,Shop (Fleet),MA,Mechanic,Female,83290,Other,Single,,0
+733,Part-Time,Zone B,Full-Time,Production       ,General - Con,MA,Flagger,Female,66418,Asian,Single,48.23,1
+760,Part-Time,Zone A,Full-Time,Production       ,Aerial,MA,Supervisor,Female,97001,Black,Single,,1
+2484,Part-Time,Zone A,Full-Time,Production       ,Finance & Accounting,MA,Administrative,Male,3468,Asian,Divorced,,1
+2566,Full-Time,Zone A,Full-Time,Production       ,General - Con,MA,Technician,Male,81311,White,Widowed,78.51,1
+2935,Full-Time,Zone C,Temporary,Production       ,Field Operations,MA,Laborer,Female,90552,Asian,Widowed,57.23,1
+2816,Full-Time,Zone C,Full-Time,Production       ,Splicing,MA,Technician,Male,63497,Hispanic,Married,69.42,1
+2806,Contract,Zone C,Part-Time,Production       ,Engineers,MA,Engineer,Male,14249,Asian,Widowed,55.42,0
+1943,Contract,Zone B,Full-Time,Production       ,Field Operations,MA,Locator,Male,84707,Other,Widowed,,1
+860,Full-Time,Zone A,Full-Time,Production       ,General - Con,MA,Technician,Female,56136,Black,Widowed,,0
+428,Part-Time,Zone B,Part-Time,Executive Office,People Services,MA,Accountant,Male,77314,Other,Widowed,25.98,1
+1775,Contract,Zone A,Part-Time,Production       ,Project Management - Con,MA,Project Manager,Female,92017,Asian,Married,56.0,1
+1766,Part-Time,Zone A,Part-Time,Production       ,Field Operations,MA,Laborer,Male,67704,White,Married,61.98,0
+581,Contract,Zone B,Temporary,Software Engineering,General - Con,MA,Foreman,Female,2132,Hispanic,Married,,1
+116,Part-Time,Zone A,Temporary,Sales,General - Con,CA,Laborer,Female,45509,Black,Single,,1
+2817,Part-Time,Zone C,Temporary,Production       ,Shop (Fleet),MA,Mechanic,Female,67772,Black,Divorced,,1
+2084,Full-Time,Zone C,Part-Time,Software Engineering,Engineers,MA,Technician,Male,9299,Asian,Single,,1
+243,Full-Time,Zone A,Full-Time,Production       ,Billable Consultants,MA,Engineer,Female,14006,Hispanic,Widowed,,1
+237,Full-Time,Zone C,Part-Time,Production       ,Field Operations,MA,Locator,Female,2667,Other,Widowed,,0
+688,Contract,Zone A,Part-Time,Production       ,Field Operations,MA,Technician,Male,63452,Black,Widowed,,1
+992,Contract,Zone C,Full-Time,Production       ,Field Operations,MA,Laborer,Female,50647,Other,Divorced,40.17,1
+1420,Full-Time,Zone C,Part-Time,Production       ,Project Management - Con,MA,Project Manager,Male,16653,Other,Divorced,,1
+133,Contract,Zone C,Full-Time,Production       ,Field Operations,MA,Technician,Female,2127,Asian,Divorced,,1
+1217,Contract,Zone C,Temporary,IT/IS,Aerial,MA,Foreman,Male,94154,Other,Widowed,24.65,1
+1678,Part-Time,Zone C,Part-Time,Production       ,General - Sga,MA,Supervisor,Female,92541,Hispanic,Single,,1
+512,Part-Time,Zone A,Part-Time,IT/IS,General - Con,TX,Foreman,Male,78230,Black,Married,32.73,1
+2386,Contract,Zone B,Full-Time,Production       ,Wireline Construction,MA,Vp,Male,56124,Other,Single,,1
+2997,Contract,Zone B,Temporary,Production       ,Wireline Construction,MA,Laborer,Male,6608,White,Single,,0
+1705,Full-Time,Zone A,Full-Time,Production       ,Fielders,MA,Technician,Female,70052,Other,Widowed,,1
+866,Contract,Zone B,Full-Time,Production       ,Wireline Construction,MA,Lineman,Female,60878,Asian,Single,,1
+1511,Part-Time,Zone A,Full-Time,Sales,Splicing,MA,Technician,Female,52524,Other,Single,,1
+2092,Part-Time,Zone A,Part-Time,Software Engineering,Splicing,MA,Splicer,Female,32395,White,Married,,1
+1365,Full-Time,Zone C,Temporary,Production       ,Project Management - Eng,MA,Planner,Male,6449,Black,Divorced,74.91,1
+1125,Part-Time,Zone C,Part-Time,Production       ,Wireline Construction,MA,Laborer,Female,66412,Asian,Widowed,71.83,0
+690,Full-Time,Zone C,Temporary,Production       ,General - Con,MA,Technician,Male,6139,Other,Divorced,,0
+813,Contract,Zone B,Temporary,Production       ,Isp,MA,Project Manager,Female,60585,Asian,Single,39.16,1
+1062,Contract,Zone A,Part-Time,Production       ,Fielders,MA,Technician,Female,42750,White,Widowed,,1
+892,Part-Time,Zone C,Temporary,Admin Offices,Finance & Accounting,MA,Intern,Male,2703,Asian,Married,,1
+2804,Full-Time,Zone C,Part-Time,Production       ,Shop (Fleet),MA,Shop,Female,97872,White,Divorced,,1
+1327,Part-Time,Zone C,Temporary,Production       ,Project Management - Con,MA,Manager,Male,61961,Asian,Single,,1
+2403,Full-Time,Zone B,Part-Time,Production       ,General - Eng,MA,Administrative,Male,62490,White,Married,,1
+1026,Full-Time,Zone C,Temporary,Production       ,Engineers,MA,Engineer,Male,83496,Black,Single,,1
+409,Contract,Zone A,Temporary,IT/IS,General - Con,MA,Technician,Male,9738,Black,Single,78.09,1
+234,Contract,Zone C,Temporary,Production       ,Executive,MA,Vp,Male,21624,Asian,Married,,1
+1847,Full-Time,Zone A,Temporary,IT/IS,Aerial,MA,Lineman,Male,52491,Other,Widowed,,1
+465,Full-Time,Zone A,Full-Time,IT/IS,Engineers,MA,Principal,Male,60831,Hispanic,Divorced,46.99,1
+2276,Full-Time,Zone A,Part-Time,Sales,General - Con,AZ,Laborer,Male,37397,Other,Single,38.5,1
+1288,Full-Time,Zone B,Part-Time,IT/IS,Aerial,MA,Foreman,Female,86362,White,Divorced,58.25,1
+1402,Part-Time,Zone B,Temporary,Production       ,Engineers,MA,Project Manager,Male,37531,White,Married,,1
+1675,Part-Time,Zone B,Part-Time,Production       ,Field Operations,MA,Driller,Female,90728,Asian,Single,,1
+361,Part-Time,Zone A,Full-Time,Production       ,Field Operations,MA,Foreman,Female,32440,Black,Married,48.56,0
+1548,Contract,Zone A,Temporary,Production       ,Project Management - Con,MA,Manager,Female,10062,Other,Divorced,,1
+509,Full-Time,Zone B,Temporary,IT/IS,General - Sga,CT,Director,Male,6033,Other,Widowed,,0
+2541,Part-Time,Zone B,Temporary,Production       ,General - Con,MA,Technician,Female,2027,Black,Single,43.66,1
+2675,Full-Time,Zone C,Part-Time,Production       ,Field Operations,MA,Laborer,Male,11092,Black,Widowed,32.23,0
+2222,Part-Time,Zone A,Full-Time,Sales,Project Management - Con,NY,Coordinator,Female,59871,White,Widowed,,1
+1858,Full-Time,Zone C,Temporary,Production       ,Project Management - Con,MA,Coordinator,Male,2169,Other,Single,,1
+2160,Full-Time,Zone A,Part-Time,Sales,Field Operations,MA,Technician,Male,69470,Other,Widowed,,1
+85,Contract,Zone C,Temporary,Sales,Yard (Material Handling),TX,Coordinator,Female,58860,Black,Single,,0
+1679,Contract,Zone C,Temporary,Production       ,Wireline Construction,MA,Foreman,Male,47601,White,Widowed,,1
+2220,Contract,Zone A,Temporary,Sales,Project Management - Con,ID,Coordinator,Male,33659,Hispanic,Single,74.81,1
+1344,Part-Time,Zone C,Part-Time,Production       ,Shop (Fleet),MA,Mechanic,Male,16902,Hispanic,Widowed,,1
+2863,Part-Time,Zone A,Full-Time,Production       ,Field Operations,MA,Mechanic,Male,60198,Other,Single,29.48,1
+995,Full-Time,Zone B,Full-Time,Production       ,Technology / It,MA,Technician,Female,6933,Hispanic,Divorced,30.89,0
+1325,Part-Time,Zone B,Temporary,Production       ,General - Con,MA,Mechanic,Male,56894,White,Single,42.73,1
+1530,Part-Time,Zone C,Full-Time,Production       ,Field Operations,MA,Manager,Female,2330,Asian,Widowed,,0
+2207,Part-Time,Zone B,Temporary,Sales,Field Operations,WA,Technician,Female,12008,Asian,Single,,1
+440,Part-Time,Zone B,Full-Time,Executive Office,Catv,MA,Clerk,Male,5363,Other,Widowed,,1
+1086,Contract,Zone C,Temporary,Production       ,General - Eng,MA,Engineer,Male,75433,Other,Widowed,31.81,1
+1132,Full-Time,Zone B,Full-Time,Production       ,Project Management - Con,MA,Coordinator,Male,32042,Other,Divorced,59.89,0
+2288,Full-Time,Zone B,Temporary,Sales,Field Operations,WA,Manager,Female,44669,Asian,Divorced,,1
+2543,Full-Time,Zone B,Temporary,Production       ,General - Con,MA,Clerk,Female,2451,Hispanic,Widowed,,1
+1597,Full-Time,Zone C,Full-Time,Production       ,Field Operations,MA,Coordinator,Female,5063,Asian,Single,,1
+2765,Full-Time,Zone A,Part-Time,Production       ,Aerial,MA,Laborer,Female,26250,Black,Single,27.09,1
+2420,Part-Time,Zone C,Full-Time,Production       ,Underground,MA,Laborer,Female,81717,Black,Married,,0
+2215,Full-Time,Zone C,Full-Time,Sales,Field Operations,AL,Laborer,Male,65470,Asian,Divorced,,1
+1954,Part-Time,Zone B,Part-Time,Production       ,Catv,MA,Foreman,Female,10486,Other,Divorced,36.41,1
+2277,Part-Time,Zone A,Full-Time,Sales,Field Operations,AZ,Technician,Male,39020,Black,Widowed,,1
+960,Contract,Zone B,Full-Time,Admin Offices,General - Con,MA,Laborer,Male,63614,Hispanic,Divorced,,1
+36,Part-Time,Zone A,Temporary,Sales,Field Operations,IN,Tower Hand,Male,12703,Hispanic,Single,,1
+1662,Contract,Zone C,Part-Time,Production       ,Technology / It,MA,Director,Female,93414,White,Married,58.74,1
+2296,Part-Time,Zone C,Temporary,Sales,Field Operations,TN,Technician,Male,37293,White,Widowed,,1
+1041,Contract,Zone A,Part-Time,Production       ,Field Operations,MA,Laborer,Female,24605,Hispanic,Divorced,,1
+1063,Contract,Zone A,Temporary,Production       ,Engineers,MA,Director,Female,40934,White,Widowed,,1
+2571,Contract,Zone C,Part-Time,Production       ,General - Con,MA,Groundman,Male,19677,White,Widowed,56.9,1
+2723,Full-Time,Zone C,Part-Time,Production       ,Aerial,MA,Foreman,Female,11927,Asian,Widowed,69.9,1
+1631,Full-Time,Zone A,Temporary,Production       ,Field Operations,MA,Laborer,Male,9125,White,Divorced,,1
+2813,Full-Time,Zone C,Temporary,Production       ,Shop (Fleet),MA,Shop,Female,60148,Asian,Married,44.67,0
+1169,Contract,Zone C,Temporary,Production       ,General - Sga,MA,Administrator,Female,2999,Other,Married,,0
+2981,Contract,Zone B,Full-Time,Production       ,Field Operations,MA,Supervisor,Male,67579,Asian,Divorced,59.5,0
+1730,Contract,Zone A,Full-Time,Production       ,General - Sga,MA,Assistant,Female,1687,Asian,Married,74.91,1
+786,Part-Time,Zone A,Part-Time,Production       ,Project Management - Con,MA,Coordinator,Female,41849,White,Married,,1
+1993,Contract,Zone B,Full-Time,Production       ,Project Management - Con,MA,Coordinator,Female,22631,White,Single,75.99,1
+2864,Contract,Zone C,Full-Time,Production       ,General - Con,MA,Flagger,Male,50905,Hispanic,Married,67.32,1
+1186,Contract,Zone C,Full-Time,Production       ,Field Operations,MA,Laborer,Female,61768,Other,Single,29.82,1
+1936,Full-Time,Zone C,Temporary,Production       ,Wireline Construction,MA,Foreman,Female,14808,Hispanic,Widowed,,1
+2280,Full-Time,Zone B,Part-Time,Sales,General - Con,AL,Foreman,Male,95876,White,Married,,1
+2365,Part-Time,Zone A,Temporary,Production       ,Engineers,MA,Technician,Male,19908,Black,Single,71.24,1
+2886,Full-Time,Zone B,Full-Time,Production       ,Wireline Construction,MA,Assistant,Male,36560,Hispanic,Married,,1
+835,Part-Time,Zone A,Full-Time,Production       ,Engineers,MA,Engineer,Female,23777,Hispanic,Widowed,,0
+459,Part-Time,Zone B,Temporary,IT/IS,Wireless,CT,Technician,Male,42646,Other,Single,47.56,1
+1980,Full-Time,Zone C,Temporary,Production       ,Finance & Accounting,MA,Clerk,Male,47723,Other,Widowed,,1
+329,Full-Time,Zone A,Temporary,Production       ,Field Operations,MA,Driller,Female,13669,Hispanic,Married,80.99,1
+263,Part-Time,Zone A,Temporary,Production       ,Yard (Material Handling),MA,Laborer,Male,60287,White,Single,,1
+265,Full-Time,Zone B,Part-Time,Production       ,Aerial,MA,Lineman,Male,75371,Black,Widowed,,1
+969,Part-Time,Zone A,Full-Time,Production       ,General - Eng,MA,Engineer,Female,1810,Hispanic,Married,68.48,1
+76,Part-Time,Zone A,Temporary,Sales,Project Management - Con,CO,Manager,Male,71319,Other,Single,,1
+875,Full-Time,Zone A,Full-Time,Production       ,Field Operations,MA,Laborer,Female,77552,Other,Married,24.9,0
+2547,Full-Time,Zone C,Part-Time,Production       ,Field Operations,MA,Laborer,Female,1749,Black,Single,79.58,1
+953,Part-Time,Zone A,Temporary,Admin Offices,Field Operations,MA,Laborer,Male,3676,Hispanic,Single,71.74,1
+1851,Part-Time,Zone B,Temporary,Production       ,Wireless,MA,Operator,Female,1776,White,Widowed,,1
+1148,Contract,Zone A,Temporary,Production       ,Field Operations,MA,Laborer,Female,82586,Asian,Single,,0
+975,Full-Time,Zone B,Full-Time,Production       ,General - Sga,MA,Technician,Female,1902,White,Divorced,36.06,1
+2539,Full-Time,Zone A,Temporary,Production       ,Aerial,MA,Laborer,Male,24429,White,Divorced,,1
+396,Full-Time,Zone A,Temporary,Executive Office,Shop (Fleet),MA,Supervisor,Male,12469,White,Single,,1
+1585,Contract,Zone B,Full-Time,Production       ,General - Sga,MA,Vp,Female,44651,White,Single,40.57,1
+895,Full-Time,Zone B,Full-Time,Admin Offices,Executive,MA,Ceo,Female,1450,Hispanic,Widowed,,1
+2701,Part-Time,Zone A,Temporary,Production       ,Field Operations,MA,Technician,Female,7259,Black,Widowed,,1
+2800,Contract,Zone A,Temporary,Production       ,Aerial,MA,Groundman,Female,1013,Black,Widowed,55.4,0
+1784,Contract,Zone C,Temporary,IT/IS,Field Operations,CT,Administrator,Female,6070,White,Married,,1
+1410,Part-Time,Zone B,Full-Time,Production       ,Project Management - Con,MA,Technician,Female,5981,Asian,Divorced,,1
+1953,Full-Time,Zone A,Temporary,Production       ,General - Con,MA,Laborer,Female,87440,Other,Married,,1
+1892,Contract,Zone A,Part-Time,Production       ,General - Sga,MA,Administrator,Female,31008,White,Widowed,,0
+548,Part-Time,Zone B,Temporary,IT/IS,Field Operations,TX,Technician,Male,44793,Asian,Single,,0
+1712,Part-Time,Zone B,Full-Time,Production       ,Aerial,MA,Laborer,Female,3763,White,Widowed,,1
+2456,Part-Time,Zone C,Full-Time,Production       ,General - Con,MA,Operator,Male,74091,Hispanic,Married,64.9,1
+405,Full-Time,Zone B,Part-Time,IT/IS,Project Management - Eng,MA,Planner,Female,96097,Hispanic,Widowed,60.48,0
+742,Contract,Zone B,Part-Time,Production       ,Field Operations,MA,Operator,Female,66037,Asian,Single,,1
+1958,Contract,Zone A,Part-Time,Production       ,Yard (Material Handling),MA,Associate,Female,46287,Asian,Single,,1
+253,Part-Time,Zone B,Full-Time,Production       ,Underground,MA,Operator,Female,51584,Other,Divorced,,1
+453,Part-Time,Zone B,Temporary,IT/IS,General - Con,MA,Clerical,Male,73726,Black,Single,,1
+1611,Part-Time,Zone A,Temporary,Production       ,Splicing,MA,Foreman,Female,81445,Black,Married,23.74,1
+1645,Contract,Zone A,Temporary,Production       ,Project Management - Con,MA,Engineer,Female,37599,White,Single,44.48,1
+596,Contract,Zone C,Part-Time,Software Engineering,General - Con,MA,Clerk,Male,64122,Hispanic,Divorced,32.66,1
+1587,Part-Time,Zone B,Temporary,Production       ,Splicing,MA,Technician,Female,6175,Asian,Divorced,40.14,1
+882,Part-Time,Zone C,Part-Time,Production       ,Field Operations,MA,Driller,Female,41055,Other,Widowed,,1
+333,Full-Time,Zone A,Part-Time,Production       ,General - Con,MA,Technician,Male,20814,Other,Widowed,64.08,1
+1526,Full-Time,Zone B,Full-Time,Production       ,Finance & Accounting,MA,Cfo,Female,2718,Asian,Divorced,,1
+13,Contract,Zone A,Full-Time,Sales,Finance & Accounting,KY,Controller,Female,40220,White,Divorced,73.56,1
+1874,Part-Time,Zone C,Temporary,Production       ,Underground,MA,Operator,Female,1425,Asian,Single,78.07,1
+2287,Part-Time,Zone C,Temporary,Sales,Field Operations,WA,Tower Hand,Male,3780,Asian,Widowed,52.15,1
+2371,Contract,Zone A,Part-Time,Production       ,Engineers,MA,Planner,Male,89805,Asian,Divorced,,1
+763,Contract,Zone B,Full-Time,Production       ,Project Management - Eng,MA,Project Manager,Female,88496,Hispanic,Married,,0
+2354,Contract,Zone A,Part-Time,Production       ,Field Operations,MA,Operator,Male,47540,Asian,Divorced,,0
+1901,Full-Time,Zone B,Part-Time,Production       ,General - Con,MA,Splicer,Male,48068,Asian,Divorced,,1
+1523,Contract,Zone C,Temporary,Production       ,Splicing,PA,Splicer,Female,30495,Asian,Married,,0
+1440,Full-Time,Zone B,Temporary,Production       ,Engineers,MA,Technician,Male,25698,Asian,Divorced,82.97,1
+130,Part-Time,Zone C,Temporary,Sales,Field Operations,MA,Operator,Male,68837,Other,Single,64.57,1
+2133,Part-Time,Zone A,Part-Time,IT/IS,Field Operations,MA,Vp,Male,43352,Black,Widowed,47.67,1
+896,Full-Time,Zone B,Temporary,Admin Offices,Aerial,MA,Foreman,Female,1844,Black,Divorced,,1
+1107,Full-Time,Zone B,Temporary,Production       ,Field Operations,MA,Operator,Male,11719,White,Married,60.22,1
+769,Part-Time,Zone C,Temporary,Production       ,General - Eng,MA,Administrator,Female,47386,Other,Married,46.48,1
+677,Part-Time,Zone C,Temporary,Production       ,General - Eng,MA,Supervisor,Male,2072,Asian,Divorced,,1
+924,Contract,Zone C,Part-Time,Admin Offices,Field Operations,MA,Tower Hand,Male,38846,White,Divorced,26.67,1
+2038,Contract,Zone A,Full-Time,Production       ,Field Operations,MA,Laborer,Female,42463,White,Single,63.31,1
+189,Contract,Zone C,Full-Time,Production       ,General - Con,MA,Laborer,Female,14234,Hispanic,Married,,1
+1835,Contract,Zone A,Temporary,IT/IS,Engineers,CT,Engineer,Female,84506,Other,Divorced,74.81,1
+1605,Contract,Zone C,Part-Time,Production       ,Field Operations,MA,Technician,Male,19087,Asian,Divorced,28.64,1
+2149,Contract,Zone B,Part-Time,Sales,General - Sga,MT,Supervisor,Female,59102,Asian,Widowed,,1
+2120,Full-Time,Zone A,Temporary,Sales,General - Con,MA,Laborer,Male,31784,Hispanic,Widowed,,1
+1232,Full-Time,Zone C,Part-Time,Sales,Field Operations,MA,Laborer,Female,39930,White,Single,,1
+681,Full-Time,Zone A,Full-Time,Production       ,General - Con,MA,Flagger,Male,2324,White,Married,,1
+205,Contract,Zone C,Full-Time,Production       ,Field Operations,MA,Foreman,Male,37983,Asian,Married,79.81,1
+2040,Full-Time,Zone B,Full-Time,Production       ,Engineers,MA,Engineer,Female,86392,Other,Married,45.92,0
+2232,Part-Time,Zone B,Temporary,Sales,General - Con,AL,Administrative,Male,71519,Black,Single,,1
+288,Contract,Zone A,Full-Time,Production       ,Project Management - Con,MA,Coordinator,Male,27233,Black,Widowed,48.67,1
+2282,Full-Time,Zone A,Full-Time,Sales,Field Operations,ID,Locator,Male,62350,Asian,Married,,1
+1986,Full-Time,Zone B,Temporary,Production       ,General - Con,MA,Driver,Female,18899,White,Single,82.25,1
+1113,Contract,Zone C,Temporary,Production       ,Technology / It,MA,Cio,Female,62937,Black,Widowed,,1
+2999,Full-Time,Zone B,Temporary,Production       ,Field Operations,MA,Warehouse Technician,Female,57487,White,Married,34.15,1
+2091,Full-Time,Zone A,Full-Time,IT/IS,Wireline Construction,MA,Laborer,Male,53499,White,Widowed,,1
+2094,Contract,Zone C,Temporary,Software Engineering,Engineers,MA,Engineer,Male,74262,White,Divorced,,1
+2912,Part-Time,Zone C,Part-Time,Production       ,Technology / It,MA,Engineer,Male,50557,Hispanic,Divorced,73.14,1
+704,Part-Time,Zone B,Part-Time,Production       ,Splicing,MA,Operator,Female,48502,Black,Single,,1

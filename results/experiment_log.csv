@@ -8,4 +8,5 @@ experiment_id,model,target,validation_metric,validation_rmse,validation_mae,vali
 1,LinearRegression,Current Employee Rating,RMSE,1.088490294066803,0.7970834011172115,-0.1154909331062339,0.1677958965301513,42,Week 2 reproducible baseline run,,,
 1,LinearRegression,Current Employee Rating,RMSE,1.088490294066803,0.7970834011172115,-0.1154909331062339,0.2452023029327392,42,Week 2 reproducible baseline run,,,
 1,LinearRegression,Current Employee Rating,RMSE,1.088490294066803,0.7970834011172115,-0.1154909331062339,0.2446150779724121,42,Week 2 reproducible baseline run,,,
-1,LinearRegression,Current Employee Rating,accuracy,,,,0.653634786605835,42,Week 2 reproducible baseline run,0.49333333333333335,0.32825060354472124,0.49333333333333335
+1,LinearRegression,Current Employee Rating,accuracy,,,,0.653634786605835,42,Week 2 reproducible baseline run,0.4933333333333333,0.3282506035447212,0.4933333333333333
+1,LinearRegression,Current Employee Rating,accuracy,,,,0.4621303081512451,42,Week 2 reproducible baseline run,0.49333333333333335,0.32825060354472124,0.49333333333333335

@@ -1,0 +1,76 @@
+# Employee Baseline Project (Week 2)
+
+This repository provides a deterministic, end-to-end baseline for predicting **Current Employee Rating** from the employee dataset. This baseline does not include the **local weather** of each state in USA yet. This is a baseline for predicitng the Burout Rating with 1 being very burnout and 5 being productive.
+
+## Target
+- **Outcome variable:** `Current Employee Rating`
+- **Model:** Logistic Regression (Multi-Class) baseline
+- **Why this target:** numeric discrete 1 to 5 rating makes accuracy a natural, stable validation metric.
+
+## What is excluded from the baseline
+- `Performance Score` is excluded because it is too close to the target and can create leakage.
+- `EmpID`, names, and email are excluded because they are identifiers rather than useful generalizable predictors.
+- `TerminationDescription` is excluded in the first baseline because it is sparse free text and can make the first evaluator unstable.
+
+## Locked evaluation rule
+During the search phase, the agent may only evaluate on the **validation set (15% of dataset)**.
+The **final test set (15% of dataset)** is saved and must not be accessed until the very end of the project.
+
+## Deterministic split
+- Train: 70%
+- Validation: 15%
+- Test: 15%
+- Random seed: `42`
+
+The exact split indices are saved under `data/processed/`.
+
+## Repository structure
+```text
+employee_baseline_project/
+├── data/
+│   ├── raw/
+│   │   └── employee_data.csv
+│   └── processed/
+│       ├── train_indices.csv
+│       ├── val_indices.csv
+│       ├── test_indices.csv
+│       └── split_plan.json
+├── results/
+│   ├── baseline_metrics.json
+│   └── experiment_log.csv
+├── src/
+│   ├── config.py
+│   ├── data_processing.py
+│   ├── model.py
+│   ├── evaluation.py
+│   ├── experiment_log.py
+│   └── run_baseline.py
+├── requirements.txt
+└── README.md
+```
+
+## How to run
+From the project root:
+
+```bash
+pip install -r requirements.txt
+python src/run_baseline.py
+```
+
+## Expected behavior
+The script will:
+1. Load the raw employee dataset
+2. Create deterministic engineered features such as age and tenure
+3. Split data into train, validation, and test using a fixed seed
+4. Train a baseline linear regression model
+5. Report validation RMSE, MAE, and R-squared
+6. Save results and the first experiment log entry
+
+## Output files
+- `results/baseline_metrics.json`: stable evaluator output
+- `results/experiment_log.csv`: experiment tracking
+- `data/processed/split_plan.json`: locked test set policy
+
+## Notes for the TA
+This baseline is designed to be run with a single command and a fixed random seed.
+No access to the final test set is needed for the Week 2 checkpoint.

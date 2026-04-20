@@ -23,21 +23,26 @@ The **final test set (15% of dataset)** is saved and must not be accessed until 
 - Random seed: `42`
 
 The exact split indices are saved under `data/processed/`.
+- X_train: Training Data Regressors
+- y_train: Dependent Variable of Training Set
+- X_val: Validation Data Regressors
+- y_val: Dependent Variable of validation set
 
-## Repository structure
+## Repository structure (Now only baseline file of py exists)
 ```text
 employee_baseline_project/
 ├── data/
-│   ├── raw/
-│   │   └── employee_data.csv
+│   ├── employee_data.csv, weather_data.csv
 │   └── processed/
-│       ├── train_indices.csv
-│       ├── val_indices.csv
-│       ├── test_indices.csv
-│       └── split_plan.json
+│       ├── X_train.csv
+│       ├── X_val.csv
+│       ├── y_train.csv
+│       └── y_val.csv
 ├── results/
 │   ├── baseline_metrics.json
 │   └── experiment_log.csv
+|   ├── locked_test_indices.csv
+│   └── split_info.json
 ├── src/
 │   ├── config.py
 │   ├── data_processing.py
@@ -73,4 +78,4 @@ The script will:
 
 ## Notes for the TA
 This baseline is designed to be run with a single command and a fixed random seed.
-No access to the final test set is needed for the Week 2 checkpoint.
+No access to the final test set is needed now.

@@ -1,0 +1,11 @@
+experiment_id,model,target,validation_metric,validation_rmse,validation_mae,validation_r2,runtime_seconds,random_state,notes,validation_accuracy,validation_precision,validation_recall
+1,LinearRegression,Current Employee Rating,RMSE,1.088490294066803,0.7970834011172115,-0.1154909331062339,0.199800968170166,42,Week 2 reproducible baseline run,,,
+1,LinearRegression,Current Employee Rating,RMSE,1.088490294066803,0.7970834011172115,-0.1154909331062339,4.818457126617432,42,Week 2 reproducible baseline run,,,
+1,LinearRegression,Current Employee Rating,RMSE,1.088490294066803,0.7970834011172115,-0.1154909331062339,0.1888110637664795,42,Week 2 reproducible baseline run,,,
+1,LinearRegression,Current Employee Rating,RMSE,1.088490294066803,0.7970834011172115,-0.1154909331062339,0.1815640926361084,42,Week 2 reproducible baseline run,,,
+1,LinearRegression,Current Employee Rating,RMSE,1.088490294066803,0.7970834011172115,-0.1154909331062339,0.172253131866455,42,Week 2 reproducible baseline run,,,
+1,LinearRegression,Current Employee Rating,RMSE,1.088490294066803,0.7970834011172115,-0.1154909331062339,0.1904330253601074,42,Week 2 reproducible baseline run,,,
+1,LinearRegression,Current Employee Rating,RMSE,1.088490294066803,0.7970834011172115,-0.1154909331062339,0.1677958965301513,42,Week 2 reproducible baseline run,,,
+1,LinearRegression,Current Employee Rating,RMSE,1.088490294066803,0.7970834011172115,-0.1154909331062339,0.2452023029327392,42,Week 2 reproducible baseline run,,,
+1,LinearRegression,Current Employee Rating,RMSE,1.088490294066803,0.7970834011172115,-0.1154909331062339,0.2446150779724121,42,Week 2 reproducible baseline run,,,
+1,LinearRegression,Current Employee Rating,accuracy,,,,0.653634786605835,42,Week 2 reproducible baseline run,0.49333333333333335,0.32825060354472124,0.49333333333333335

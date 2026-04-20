@@ -1,0 +1,9 @@
+{
+  "random_state": 42,
+  "target_column": "Current Employee Rating",
+  "n_total": 3000,
+  "n_train": 2100,
+  "n_val": 450,
+  "n_test": 450,
+  "test_set_policy": "Locked and not used during search phase."
+}

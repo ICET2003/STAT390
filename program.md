@@ -47,8 +47,11 @@ The target column is:
    - numeric columns: median imputation and standard scaling
    - categorical columns: most frequent imputation and one-hot encoding
 12. Train a logistic regression classification model.
-13. Evaluate the model on the validation set.
-14. Save metrics, split information, experiment log, and locked test indices.
+13. Tune a random forest classifier with `GridSearchCV` on training folds only.
+14. Tune a polynomial logistic regression model with degree-2 numeric polynomial features.
+15. Tune a boosted tree model with `GradientBoostingClassifier`.
+16. Evaluate all models on the validation set.
+17. Save metrics, split information, experiment log, and locked test indices.
 
 ## Loops Used
 
@@ -72,11 +75,16 @@ This safely filters the drop list so the program only drops columns that are act
 
 ## Model
 
-The baseline model is:
+The baseline models are:
 
 - `LogisticRegression`
+- `RandomForestClassifier`
+- `PolynomialLogisticRegression`
+- `GradientBoostingClassifier`
 
-This is appropriate because the target is a multi-class rating from 1 to 5.
+These are appropriate because the target is a multi-class rating from 1 to 5. Logistic regression provides a simple linear baseline, random forest and boosted trees explore nonlinear relationships and feature interactions, and the polynomial logistic model checks whether simple numeric interactions improve the linear baseline.
+
+The random forest, polynomial logistic, and boosted tree searches use weighted F1 as the cross-validation scoring metric and only tune on the training data. The locked test set is still not used.
 
 ## Validation Metrics
 
@@ -97,6 +105,9 @@ The program writes the following files:
 - `data/processed/y_val.csv`
 - `results/split_info.json`
 - `results/baseline_metrics.json`
+- `results/random_forest_metrics.json`
+- `results/polynomial_logistic_metrics.json`
+- `results/boosted_tree_metrics.json`
 - `results/experiment_log.csv`
 - `results/locked_test_indices.csv`
 

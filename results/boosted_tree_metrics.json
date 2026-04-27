@@ -1,0 +1,16 @@
+{
+  "model": "GradientBoostingClassifier",
+  "best_params": {
+    "clf__learning_rate": 0.05,
+    "clf__max_depth": 3,
+    "clf__n_estimators": 50
+  },
+  "best_cv_f1_weighted": 0.4111954270984757,
+  "validation_metrics": {
+    "accuracy": 0.49333333333333335,
+    "f1_weighted": 0.3711226277890721,
+    "precision_weighted": 0.34902092643209387,
+    "recall_weighted": 0.49333333333333335
+  },
+  "runtime_seconds": 32.227505922317505
+}

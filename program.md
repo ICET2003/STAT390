@@ -108,6 +108,7 @@ The program writes the following files:
 - `results/random_forest_metrics.json`
 - `results/polynomial_logistic_metrics.json`
 - `results/boosted_tree_metrics.json`
+- `results/validation_diagnostics.json`
 - `results/experiment_log.csv`
 - `results/locked_test_indices.csv`
 

@@ -1,0 +1,156 @@
+"""Editable model definitions and evaluation helpers."""
+
+from __future__ import annotations
+
+import inspect
+
+import pandas as pd
+from sklearn.compose import ColumnTransformer
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    confusion_matrix,
+    f1_score,
+    precision_score,
+    recall_score,
+)
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder, PolynomialFeatures, StandardScaler
+
+from prepare import RANDOM_STATE
+
+
+def _make_one_hot_encoder() -> OneHotEncoder:
+    params = {"handle_unknown": "ignore"}
+    if "sparse_output" in inspect.signature(OneHotEncoder).parameters:
+        params["sparse_output"] = False
+    else:
+        params["sparse"] = False
+    return OneHotEncoder(**params)
+
+
+def build_preprocessor(
+    X: pd.DataFrame,
+    polynomial_numeric: bool = False,
+) -> ColumnTransformer:
+    numeric_features = X.select_dtypes(include=["number"]).columns.tolist()
+    categorical_features = X.select_dtypes(exclude=["number"]).columns.tolist()
+
+    numeric_steps = [
+        ("imputer", SimpleImputer(strategy="median")),
+        ("scaler", StandardScaler()),
+    ]
+    if polynomial_numeric:
+        numeric_steps.append(("poly", PolynomialFeatures(degree=2, include_bias=False)))
+
+    numeric_pipeline = Pipeline(steps=numeric_steps)
+    categorical_pipeline = Pipeline(
+        steps=[
+            ("imputer", SimpleImputer(strategy="most_frequent")),
+            ("onehot", _make_one_hot_encoder()),
+        ]
+    )
+
+    return ColumnTransformer(
+        transformers=[
+            ("num", numeric_pipeline, numeric_features),
+            ("cat", categorical_pipeline, categorical_features),
+        ],
+        sparse_threshold=0,
+    )
+
+
+def build_logistic_regression(X_train: pd.DataFrame) -> Pipeline:
+    return Pipeline(
+        steps=[
+            ("preprocessor", build_preprocessor(X_train)),
+            ("clf", LogisticRegression(max_iter=1000)),
+        ]
+    )
+
+
+def build_random_forest_search_space(X_train: pd.DataFrame) -> tuple[Pipeline, dict]:
+    pipeline = Pipeline(
+        steps=[
+            ("preprocessor", build_preprocessor(X_train)),
+            ("clf", RandomForestClassifier(random_state=RANDOM_STATE, n_jobs=-1)),
+        ]
+    )
+    param_grid = {
+        "clf__n_estimators": [100, 200],
+        "clf__max_depth": [None, 10, 20],
+        "clf__min_samples_leaf": [1, 2, 4],
+        "clf__max_features": ["sqrt", "log2"],
+    }
+    return pipeline, param_grid
+
+
+def build_polynomial_logistic_search_space(X_train: pd.DataFrame) -> tuple[Pipeline, dict]:
+    pipeline = Pipeline(
+        steps=[
+            ("preprocessor", build_preprocessor(X_train, polynomial_numeric=True)),
+            ("clf", LogisticRegression(max_iter=2000)),
+        ]
+    )
+    param_grid = {
+        "clf__C": [0.1, 1.0, 10.0],
+        "clf__class_weight": [None, "balanced"],
+    }
+    return pipeline, param_grid
+
+
+def build_boosted_tree_search_space(X_train: pd.DataFrame) -> tuple[Pipeline, dict]:
+    pipeline = Pipeline(
+        steps=[
+            ("preprocessor", build_preprocessor(X_train)),
+            ("clf", GradientBoostingClassifier(random_state=RANDOM_STATE)),
+        ]
+    )
+    param_grid = {
+        "clf__n_estimators": [50, 100],
+        "clf__learning_rate": [0.05, 0.1],
+        "clf__max_depth": [2, 3],
+    }
+    return pipeline, param_grid
+
+
+def evaluate_classification(y_true, y_pred) -> dict:
+    return {
+        "accuracy": float(accuracy_score(y_true, y_pred)),
+        "f1_weighted": float(f1_score(y_true, y_pred, average="weighted")),
+        "precision_weighted": float(
+            precision_score(y_true, y_pred, average="weighted")
+        ),
+        "recall_weighted": float(recall_score(y_true, y_pred, average="weighted")),
+    }
+
+
+def build_validation_diagnostics(y_true: pd.Series, model_predictions: dict) -> dict:
+    labels = sorted(y_true.dropna().unique().tolist())
+    diagnostics = {
+        "true_class_distribution": y_true.value_counts().sort_index().astype(int).to_dict(),
+        "models": {},
+    }
+
+    for model_name, y_pred in model_predictions.items():
+        pred_series = pd.Series(y_pred)
+        diagnostics["models"][model_name] = {
+            "predicted_class_distribution": pred_series.value_counts()
+            .sort_index()
+            .astype(int)
+            .to_dict(),
+            "confusion_matrix_labels": labels,
+            "confusion_matrix": confusion_matrix(y_true, y_pred, labels=labels).tolist(),
+            "classification_report": classification_report(
+                y_true,
+                y_pred,
+                labels=labels,
+                output_dict=True,
+                zero_division=0,
+            ),
+        }
+
+    return diagnostics

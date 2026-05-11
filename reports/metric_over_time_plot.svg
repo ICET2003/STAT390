@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="560" viewBox="0 0 920 560" role="img" aria-labelledby="title desc">
+  <title id="title">Metric Over Time Plot</title>
+  <desc id="desc">Validation accuracy, weighted F1, weighted precision, and weighted recall plotted across four experiment IDs.</desc>
+  <rect width="920" height="560" fill="#ffffff"/>
+  <text x="460" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#1f2933">Metric Over Time by Experiment</text>
+  <text x="460" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#52616b">Validation metrics only; locked test set is not used</text>
+
+  <line x1="90" y1="470" x2="850" y2="470" stroke="#25313c" stroke-width="1.5"/>
+  <line x1="90" y1="90" x2="90" y2="470" stroke="#25313c" stroke-width="1.5"/>
+
+  <line x1="90" y1="470" x2="850" y2="470" stroke="#d7dce0" stroke-width="1"/>
+  <line x1="90" y1="394" x2="850" y2="394" stroke="#d7dce0" stroke-width="1"/>
+  <line x1="90" y1="318" x2="850" y2="318" stroke="#d7dce0" stroke-width="1"/>
+  <line x1="90" y1="242" x2="850" y2="242" stroke="#d7dce0" stroke-width="1"/>
+  <line x1="90" y1="166" x2="850" y2="166" stroke="#d7dce0" stroke-width="1"/>
+  <line x1="90" y1="90" x2="850" y2="90" stroke="#d7dce0" stroke-width="1"/>
+
+  <text x="76" y="475" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#52616b">0.00</text>
+  <text x="76" y="399" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#52616b">0.10</text>
+  <text x="76" y="323" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#52616b">0.20</text>
+  <text x="76" y="247" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#52616b">0.30</text>
+  <text x="76" y="171" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#52616b">0.40</text>
+  <text x="76" y="95" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#52616b">0.50</text>
+
+  <line x1="90" y1="470" x2="90" y2="476" stroke="#25313c"/>
+  <line x1="343.33" y1="470" x2="343.33" y2="476" stroke="#25313c"/>
+  <line x1="596.67" y1="470" x2="596.67" y2="476" stroke="#25313c"/>
+  <line x1="850" y1="470" x2="850" y2="476" stroke="#25313c"/>
+  <text x="90" y="496" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#52616b">1</text>
+  <text x="343.33" y="496" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#52616b">2</text>
+  <text x="596.67" y="496" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#52616b">3</text>
+  <text x="850" y="496" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#52616b">4</text>
+  <text x="470" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#25313c">Experiment ID</text>
+  <text x="24" y="280" transform="rotate(-90 24 280)" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#25313c">Validation Metric</text>
+
+  <polyline points="90,95.07 343.33,98.44 596.67,95.07 850,95.07" fill="none" stroke="#005f73" stroke-width="3"/>
+  <polyline points="90,187.33 343.33,188.61 596.67,189.02 850,187.95" fill="none" stroke="#9b2226" stroke-width="3"/>
+  <polyline points="90,220.53 343.33,219.26 596.67,222.64 850,204.74" fill="none" stroke="#ee9b00" stroke-width="3"/>
+  <polyline points="90,95.07 343.33,98.44 596.67,95.07 850,95.07" fill="none" stroke="#0a9396" stroke-width="2" stroke-dasharray="7 5"/>
+
+  <g fill="#005f73">
+    <circle cx="90" cy="95.07" r="5"/><circle cx="343.33" cy="98.44" r="5"/><circle cx="596.67" cy="95.07" r="5"/><circle cx="850" cy="95.07" r="5"/>
+  </g>
+  <g fill="#9b2226">
+    <circle cx="90" cy="187.33" r="5"/><circle cx="343.33" cy="188.61" r="5"/><circle cx="596.67" cy="189.02" r="5"/><circle cx="850" cy="187.95" r="5"/>
+  </g>
+  <g fill="#ee9b00">
+    <circle cx="90" cy="220.53" r="5"/><circle cx="343.33" cy="219.26" r="5"/><circle cx="596.67" cy="222.64" r="5"/><circle cx="850" cy="204.74" r="5"/>
+  </g>
+  <g fill="#0a9396">
+    <rect x="86" y="91.07" width="8" height="8"/><rect x="339.33" y="94.44" width="8" height="8"/><rect x="592.67" y="91.07" width="8" height="8"/><rect x="846" y="91.07" width="8" height="8"/>
+  </g>
+
+  <rect x="610" y="108" width="230" height="116" fill="#ffffff" stroke="#b8c2cc" rx="4"/>
+  <line x1="630" y1="132" x2="670" y2="132" stroke="#005f73" stroke-width="3"/>
+  <circle cx="650" cy="132" r="5" fill="#005f73"/>
+  <text x="684" y="136" font-family="Arial, sans-serif" font-size="13" fill="#25313c">Accuracy</text>
+  <line x1="630" y1="158" x2="670" y2="158" stroke="#9b2226" stroke-width="3"/>
+  <circle cx="650" cy="158" r="5" fill="#9b2226"/>
+  <text x="684" y="162" font-family="Arial, sans-serif" font-size="13" fill="#25313c">Weighted F1</text>
+  <line x1="630" y1="184" x2="670" y2="184" stroke="#ee9b00" stroke-width="3"/>
+  <circle cx="650" cy="184" r="5" fill="#ee9b00"/>
+  <text x="684" y="188" font-family="Arial, sans-serif" font-size="13" fill="#25313c">Weighted Precision</text>
+  <line x1="630" y1="210" x2="670" y2="210" stroke="#0a9396" stroke-width="2" stroke-dasharray="7 5"/>
+  <rect x="646" y="206" width="8" height="8" fill="#0a9396"/>
+  <text x="684" y="214" font-family="Arial, sans-serif" font-size="13" fill="#25313c">Weighted Recall</text>
+</svg>

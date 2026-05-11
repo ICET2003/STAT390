@@ -1,0 +1,5 @@
+experiment_id,model,validation_accuracy,validation_f1_weighted,validation_precision_weighted,validation_recall_weighted,runtime_seconds,best_cv_f1_weighted,best_params
+1,LogisticRegression,0.493333,0.371930,0.328251,0.493333,0.109894,,max_iter=1000
+2,RandomForestClassifier,0.488889,0.370246,0.329916,0.488889,21.111058,0.407193,"max_depth=None; max_features=sqrt; min_samples_leaf=1; n_estimators=100"
+3,PolynomialLogisticRegression,0.493333,0.369712,0.325474,0.493333,3.165475,0.413418,"C=1.0; class_weight=None"
+4,GradientBoostingClassifier,0.493333,0.371123,0.349021,0.493333,31.378410,0.411195,"learning_rate=0.05; max_depth=3; n_estimators=50"

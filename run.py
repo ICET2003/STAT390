@@ -11,9 +11,12 @@ from sklearn.model_selection import GridSearchCV
 
 from model import (
     build_boosted_tree_search_space,
+    build_extra_trees_search_space,
+    build_hist_gradient_boosting_search_space,
     build_logistic_regression,
     build_polynomial_logistic_search_space,
     build_random_forest_search_space,
+    build_tuned_logistic_search_space,
     build_validation_diagnostics,
     evaluate_classification,
 )
@@ -23,7 +26,6 @@ from prepare import (
     TARGET_COL,
     load_prepared_data,
     prepare_data,
-    prepared_files_exist,
 )
 
 
@@ -36,12 +38,21 @@ def print_metrics(title: str, metrics: dict, runtime_seconds: float) -> None:
     print(f"Runtime (seconds): {runtime_seconds:.4f}")
 
 
-def run_grid_search(name: str, pipeline, param_grid: dict, X_train, y_train, X_val, y_val):
+def run_grid_search(
+    name: str,
+    pipeline,
+    param_grid: dict,
+    X_train,
+    y_train,
+    X_val,
+    y_val,
+    scoring: str = "f1_weighted",
+):
     start_time = time.time()
     search = GridSearchCV(
         estimator=pipeline,
         param_grid=param_grid,
-        scoring="f1_weighted",
+        scoring=scoring,
         cv=3,
         n_jobs=1,
     )
@@ -53,7 +64,7 @@ def run_grid_search(name: str, pipeline, param_grid: dict, X_train, y_train, X_v
 
     print(f"=== {name} VALIDATION RESULTS ===")
     print(f"Best params: {search.best_params_}")
-    print(f"Best CV F1: {search.best_score_:.4f}")
+    print(f"Best CV {scoring}: {search.best_score_:.4f}")
     print(f"Validation ACC: {metrics['accuracy']:.4f}")
     print(f"Validation F1:  {metrics['f1_weighted']:.4f}")
     print(f"Validation Precision:  {metrics['precision_weighted']:.4f}")
@@ -71,9 +82,8 @@ def save_json(path: Path, payload: dict) -> None:
 def main() -> None:
     RESULTS_DIR.mkdir(exist_ok=True)
 
-    if not prepared_files_exist():
-        print("Prepared data files not found. Running frozen preparation first.")
-        prepare_data()
+    print("Regenerating prepared data with current feature engineering.")
+    prepare_data()
 
     X_train, X_val, y_train, y_val = load_prepared_data()
     print("Target distribution in training data:")
@@ -88,6 +98,25 @@ def main() -> None:
     print_metrics("BASELINE", baseline_metrics, baseline_runtime_seconds)
     print("Test set is locked and is not used during the search phase.")
 
+    tuned_logistic_pipeline, tuned_logistic_param_grid = build_tuned_logistic_search_space(
+        X_train
+    )
+    (
+        tuned_logistic_search,
+        tuned_logistic_val_preds,
+        tuned_logistic_metrics,
+        tuned_logistic_runtime_seconds,
+    ) = run_grid_search(
+        "TUNED LOGISTIC",
+        tuned_logistic_pipeline,
+        tuned_logistic_param_grid,
+        X_train,
+        y_train,
+        X_val,
+        y_val,
+        scoring="accuracy",
+    )
+
     rf_pipeline, rf_param_grid = build_random_forest_search_space(X_train)
     rf_search, rf_val_preds, rf_metrics, rf_runtime_seconds = run_grid_search(
         "RANDOM FOREST",
@@ -97,6 +126,23 @@ def main() -> None:
         y_train,
         X_val,
         y_val,
+    )
+
+    extra_trees_pipeline, extra_trees_param_grid = build_extra_trees_search_space(X_train)
+    (
+        extra_trees_search,
+        extra_trees_val_preds,
+        extra_trees_metrics,
+        extra_trees_runtime_seconds,
+    ) = run_grid_search(
+        "EXTRA TREES",
+        extra_trees_pipeline,
+        extra_trees_param_grid,
+        X_train,
+        y_train,
+        X_val,
+        y_val,
+        scoring="accuracy",
     )
 
     poly_pipeline, poly_param_grid = build_polynomial_logistic_search_space(X_train)
@@ -123,13 +169,28 @@ def main() -> None:
         )
     )
 
+    hist_pipeline, hist_param_grid = build_hist_gradient_boosting_search_space(X_train)
+    hist_search, hist_val_preds, hist_metrics, hist_runtime_seconds = run_grid_search(
+        "HIST GRADIENT BOOSTING",
+        hist_pipeline,
+        hist_param_grid,
+        X_train,
+        y_train,
+        X_val,
+        y_val,
+        scoring="accuracy",
+    )
+
     validation_diagnostics = build_validation_diagnostics(
         y_val,
         {
             "LogisticRegression": baseline_val_preds,
+            "TunedLogisticRegression": tuned_logistic_val_preds,
             "RandomForestClassifier": rf_val_preds,
+            "ExtraTreesClassifier": extra_trees_val_preds,
             "PolynomialLogisticRegression": poly_val_preds,
             "GradientBoostingClassifier": boosted_val_preds,
+            "HistGradientBoostingClassifier": hist_val_preds,
         },
     )
 
@@ -146,6 +207,16 @@ def main() -> None:
         },
     )
     save_json(
+        RESULTS_DIR / "tuned_logistic_metrics.json",
+        {
+            "model": "TunedLogisticRegression",
+            "best_params": tuned_logistic_search.best_params_,
+            "best_cv_accuracy": float(tuned_logistic_search.best_score_),
+            "validation_metrics": tuned_logistic_metrics,
+            "runtime_seconds": tuned_logistic_runtime_seconds,
+        },
+    )
+    save_json(
         RESULTS_DIR / "random_forest_metrics.json",
         {
             "model": "RandomForestClassifier",
@@ -153,6 +224,16 @@ def main() -> None:
             "best_cv_f1_weighted": float(rf_search.best_score_),
             "validation_metrics": rf_metrics,
             "runtime_seconds": rf_runtime_seconds,
+        },
+    )
+    save_json(
+        RESULTS_DIR / "extra_trees_metrics.json",
+        {
+            "model": "ExtraTreesClassifier",
+            "best_params": extra_trees_search.best_params_,
+            "best_cv_accuracy": float(extra_trees_search.best_score_),
+            "validation_metrics": extra_trees_metrics,
+            "runtime_seconds": extra_trees_runtime_seconds,
         },
     )
     save_json(
@@ -175,6 +256,16 @@ def main() -> None:
             "runtime_seconds": boosted_runtime_seconds,
         },
     )
+    save_json(
+        RESULTS_DIR / "hist_gradient_boosting_metrics.json",
+        {
+            "model": "HistGradientBoostingClassifier",
+            "best_params": hist_search.best_params_,
+            "best_cv_accuracy": float(hist_search.best_score_),
+            "validation_metrics": hist_metrics,
+            "runtime_seconds": hist_runtime_seconds,
+        },
+    )
     save_json(RESULTS_DIR / "validation_diagnostics.json", validation_diagnostics)
 
     log_row = pd.DataFrame(
@@ -185,6 +276,7 @@ def main() -> None:
                 "target": TARGET_COL,
                 "validation_metric": "accuracy",
                 "validation_accuracy": baseline_metrics["accuracy"],
+                "validation_f1_weighted": baseline_metrics["f1_weighted"],
                 "validation_precision": baseline_metrics["precision_weighted"],
                 "validation_recall": baseline_metrics["recall_weighted"],
                 "runtime_seconds": baseline_runtime_seconds,
@@ -193,10 +285,27 @@ def main() -> None:
             },
             {
                 "experiment_id": 2,
+                "model": "TunedLogisticRegression",
+                "target": TARGET_COL,
+                "validation_metric": "accuracy",
+                "validation_accuracy": tuned_logistic_metrics["accuracy"],
+                "validation_f1_weighted": tuned_logistic_metrics["f1_weighted"],
+                "validation_precision": tuned_logistic_metrics["precision_weighted"],
+                "validation_recall": tuned_logistic_metrics["recall_weighted"],
+                "runtime_seconds": tuned_logistic_runtime_seconds,
+                "random_state": RANDOM_STATE,
+                "notes": (
+                    "Seasonality and state temperature features; "
+                    f"GridSearchCV best params: {tuned_logistic_search.best_params_}"
+                ),
+            },
+            {
+                "experiment_id": 3,
                 "model": "RandomForestClassifier",
                 "target": TARGET_COL,
                 "validation_metric": "f1_weighted",
                 "validation_accuracy": rf_metrics["accuracy"],
+                "validation_f1_weighted": rf_metrics["f1_weighted"],
                 "validation_precision": rf_metrics["precision_weighted"],
                 "validation_recall": rf_metrics["recall_weighted"],
                 "runtime_seconds": rf_runtime_seconds,
@@ -204,11 +313,28 @@ def main() -> None:
                 "notes": f"GridSearchCV best params: {rf_search.best_params_}",
             },
             {
-                "experiment_id": 3,
+                "experiment_id": 4,
+                "model": "ExtraTreesClassifier",
+                "target": TARGET_COL,
+                "validation_metric": "accuracy",
+                "validation_accuracy": extra_trees_metrics["accuracy"],
+                "validation_f1_weighted": extra_trees_metrics["f1_weighted"],
+                "validation_precision": extra_trees_metrics["precision_weighted"],
+                "validation_recall": extra_trees_metrics["recall_weighted"],
+                "runtime_seconds": extra_trees_runtime_seconds,
+                "random_state": RANDOM_STATE,
+                "notes": (
+                    "Seasonality and state temperature features; "
+                    f"GridSearchCV best params: {extra_trees_search.best_params_}"
+                ),
+            },
+            {
+                "experiment_id": 5,
                 "model": "PolynomialLogisticRegression",
                 "target": TARGET_COL,
                 "validation_metric": "f1_weighted",
                 "validation_accuracy": poly_metrics["accuracy"],
+                "validation_f1_weighted": poly_metrics["f1_weighted"],
                 "validation_precision": poly_metrics["precision_weighted"],
                 "validation_recall": poly_metrics["recall_weighted"],
                 "runtime_seconds": poly_runtime_seconds,
@@ -219,16 +345,33 @@ def main() -> None:
                 ),
             },
             {
-                "experiment_id": 4,
+                "experiment_id": 6,
                 "model": "GradientBoostingClassifier",
                 "target": TARGET_COL,
                 "validation_metric": "f1_weighted",
                 "validation_accuracy": boosted_metrics["accuracy"],
+                "validation_f1_weighted": boosted_metrics["f1_weighted"],
                 "validation_precision": boosted_metrics["precision_weighted"],
                 "validation_recall": boosted_metrics["recall_weighted"],
                 "runtime_seconds": boosted_runtime_seconds,
                 "random_state": RANDOM_STATE,
                 "notes": f"GridSearchCV best params: {boosted_search.best_params_}",
+            },
+            {
+                "experiment_id": 7,
+                "model": "HistGradientBoostingClassifier",
+                "target": TARGET_COL,
+                "validation_metric": "accuracy",
+                "validation_accuracy": hist_metrics["accuracy"],
+                "validation_f1_weighted": hist_metrics["f1_weighted"],
+                "validation_precision": hist_metrics["precision_weighted"],
+                "validation_recall": hist_metrics["recall_weighted"],
+                "runtime_seconds": hist_runtime_seconds,
+                "random_state": RANDOM_STATE,
+                "notes": (
+                    "Seasonality and state temperature features; "
+                    f"GridSearchCV best params: {hist_search.best_params_}"
+                ),
             },
         ]
     )

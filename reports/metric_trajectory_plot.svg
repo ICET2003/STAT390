@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="560" viewBox="0 0 920 560" role="img" aria-labelledby="title desc">
+  <title id="title">Metric Trajectory Plot</title>
+  <desc id="desc">Validation accuracy and weighted F1 across four completed experiments.</desc>
+  <rect width="920" height="560" fill="#ffffff"/>
+  <text x="460" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#1f2933">Metric Trajectory Across Completed Experiments</text>
+  <text x="460" y="64" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#52616b">Validation only; stopped tuning run is excluded</text>
+  <line x1="90" y1="470" x2="850" y2="470" stroke="#25313c" stroke-width="1.5"/>
+  <line x1="90" y1="90" x2="90" y2="470" stroke="#25313c" stroke-width="1.5"/>
+  <g stroke="#d7dce0" stroke-width="1">
+    <line x1="90" y1="470" x2="850" y2="470"/>
+    <line x1="90" y1="394" x2="850" y2="394"/>
+    <line x1="90" y1="318" x2="850" y2="318"/>
+    <line x1="90" y1="242" x2="850" y2="242"/>
+    <line x1="90" y1="166" x2="850" y2="166"/>
+    <line x1="90" y1="90" x2="850" y2="90"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="12" fill="#52616b">
+    <text x="76" y="475" text-anchor="end">0.00</text>
+    <text x="76" y="399" text-anchor="end">0.10</text>
+    <text x="76" y="323" text-anchor="end">0.20</text>
+    <text x="76" y="247" text-anchor="end">0.30</text>
+    <text x="76" y="171" text-anchor="end">0.40</text>
+    <text x="76" y="95" text-anchor="end">0.50</text>
+    <text x="90" y="496" text-anchor="middle">1</text>
+    <text x="343.33" y="496" text-anchor="middle">2</text>
+    <text x="596.67" y="496" text-anchor="middle">3</text>
+    <text x="850" y="496" text-anchor="middle">4</text>
+  </g>
+  <text x="470" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#25313c">Experiment ID</text>
+  <text x="24" y="280" transform="rotate(-90 24 280)" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#25313c">Validation Metric</text>
+  <polyline points="90,95.07 343.33,98.44 596.67,95.07 850,95.07" fill="none" stroke="#005f73" stroke-width="3"/>
+  <polyline points="90,187.33 343.33,188.61 596.67,189.02 850,187.95" fill="none" stroke="#9b2226" stroke-width="3"/>
+  <g fill="#005f73">
+    <circle cx="90" cy="95.07" r="5"/><circle cx="343.33" cy="98.44" r="5"/><circle cx="596.67" cy="95.07" r="5"/><circle cx="850" cy="95.07" r="5"/>
+  </g>
+  <g fill="#9b2226">
+    <circle cx="90" cy="187.33" r="5"/><circle cx="343.33" cy="188.61" r="5"/><circle cx="596.67" cy="189.02" r="5"/><circle cx="850" cy="187.95" r="5"/>
+  </g>
+  <rect x="620" y="114" width="205" height="76" fill="#ffffff" stroke="#b8c2cc" rx="4"/>
+  <line x1="640" y1="140" x2="680" y2="140" stroke="#005f73" stroke-width="3"/>
+  <circle cx="660" cy="140" r="5" fill="#005f73"/>
+  <text x="694" y="144" font-family="Arial, sans-serif" font-size="13" fill="#25313c">Accuracy</text>
+  <line x1="640" y1="166" x2="680" y2="166" stroke="#9b2226" stroke-width="3"/>
+  <circle cx="660" cy="166" r="5" fill="#9b2226"/>
+  <text x="694" y="170" font-family="Arial, sans-serif" font-size="13" fill="#25313c">Weighted F1</text>
+</svg>

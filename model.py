@@ -6,7 +6,12 @@ import inspect
 
 import pandas as pd
 from sklearn.compose import ColumnTransformer
-from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+from sklearn.ensemble import (
+    ExtraTreesClassifier,
+    GradientBoostingClassifier,
+    HistGradientBoostingClassifier,
+    RandomForestClassifier,
+)
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
@@ -72,6 +77,21 @@ def build_logistic_regression(X_train: pd.DataFrame) -> Pipeline:
     )
 
 
+def build_tuned_logistic_search_space(X_train: pd.DataFrame) -> tuple[Pipeline, dict]:
+    pipeline = Pipeline(
+        steps=[
+            ("preprocessor", build_preprocessor(X_train)),
+            ("clf", LogisticRegression(max_iter=5000)),
+        ]
+    )
+    param_grid = {
+        "clf__C": [0.01, 0.1, 1.0, 10.0, 100.0],
+        "clf__class_weight": [None, "balanced"],
+        "clf__solver": ["lbfgs"],
+    }
+    return pipeline, param_grid
+
+
 def build_random_forest_search_space(X_train: pd.DataFrame) -> tuple[Pipeline, dict]:
     pipeline = Pipeline(
         steps=[
@@ -80,10 +100,28 @@ def build_random_forest_search_space(X_train: pd.DataFrame) -> tuple[Pipeline, d
         ]
     )
     param_grid = {
-        "clf__n_estimators": [100, 200],
-        "clf__max_depth": [None, 10, 20],
+        "clf__n_estimators": [100, 300],
+        "clf__max_depth": [None, 10, 20, 40],
         "clf__min_samples_leaf": [1, 2, 4],
         "clf__max_features": ["sqrt", "log2"],
+        "clf__class_weight": [None, "balanced"],
+    }
+    return pipeline, param_grid
+
+
+def build_extra_trees_search_space(X_train: pd.DataFrame) -> tuple[Pipeline, dict]:
+    pipeline = Pipeline(
+        steps=[
+            ("preprocessor", build_preprocessor(X_train)),
+            ("clf", ExtraTreesClassifier(random_state=RANDOM_STATE, n_jobs=-1)),
+        ]
+    )
+    param_grid = {
+        "clf__n_estimators": [200, 500],
+        "clf__max_depth": [None, 20, 40],
+        "clf__min_samples_leaf": [1, 2, 4],
+        "clf__max_features": ["sqrt", "log2"],
+        "clf__class_weight": [None, "balanced"],
     }
     return pipeline, param_grid
 
@@ -96,7 +134,7 @@ def build_polynomial_logistic_search_space(X_train: pd.DataFrame) -> tuple[Pipel
         ]
     )
     param_grid = {
-        "clf__C": [0.1, 1.0, 10.0],
+        "clf__C": [0.01, 0.1, 1.0, 10.0],
         "clf__class_weight": [None, "balanced"],
     }
     return pipeline, param_grid
@@ -110,9 +148,28 @@ def build_boosted_tree_search_space(X_train: pd.DataFrame) -> tuple[Pipeline, di
         ]
     )
     param_grid = {
-        "clf__n_estimators": [50, 100],
-        "clf__learning_rate": [0.05, 0.1],
-        "clf__max_depth": [2, 3],
+        "clf__n_estimators": [50, 100, 200],
+        "clf__learning_rate": [0.03, 0.05, 0.1],
+        "clf__max_depth": [2, 3, 4],
+        "clf__subsample": [0.8, 1.0],
+    }
+    return pipeline, param_grid
+
+
+def build_hist_gradient_boosting_search_space(
+    X_train: pd.DataFrame,
+) -> tuple[Pipeline, dict]:
+    pipeline = Pipeline(
+        steps=[
+            ("preprocessor", build_preprocessor(X_train)),
+            ("clf", HistGradientBoostingClassifier(random_state=RANDOM_STATE)),
+        ]
+    )
+    param_grid = {
+        "clf__learning_rate": [0.03, 0.05, 0.1],
+        "clf__max_iter": [100, 200],
+        "clf__max_leaf_nodes": [15, 31, 63],
+        "clf__l2_regularization": [0.0, 0.1, 1.0],
     }
     return pipeline, param_grid
 

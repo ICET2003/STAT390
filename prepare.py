@@ -10,6 +10,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
@@ -38,6 +39,114 @@ DROP_COLS = [
     "Performance Score",
 ]
 
+STATE_AVG_TEMP_F = {
+    "AL": 62.8,
+    "AK": 26.6,
+    "AZ": 60.3,
+    "AR": 60.4,
+    "CA": 59.4,
+    "CO": 45.1,
+    "CT": 49.0,
+    "DE": 55.3,
+    "FL": 70.7,
+    "GA": 63.5,
+    "HI": 70.0,
+    "ID": 44.4,
+    "IL": 51.8,
+    "IN": 51.7,
+    "IA": 47.8,
+    "KS": 54.3,
+    "KY": 55.6,
+    "LA": 66.4,
+    "ME": 41.0,
+    "MD": 54.2,
+    "MA": 47.9,
+    "MI": 44.4,
+    "MN": 41.2,
+    "MS": 63.4,
+    "MO": 54.5,
+    "MT": 42.7,
+    "NE": 48.8,
+    "NV": 49.9,
+    "NH": 43.8,
+    "NJ": 52.7,
+    "NM": 53.4,
+    "NY": 45.4,
+    "NC": 59.0,
+    "ND": 40.4,
+    "OH": 50.7,
+    "OK": 59.6,
+    "OR": 48.4,
+    "PA": 48.8,
+    "RI": 50.1,
+    "SC": 62.4,
+    "SD": 45.2,
+    "TN": 57.6,
+    "TX": 64.8,
+    "UT": 48.6,
+    "VT": 42.9,
+    "VA": 55.1,
+    "WA": 48.3,
+    "WV": 51.8,
+    "WI": 43.1,
+    "WY": 42.0,
+    "DC": 58.2,
+}
+
+STATE_REGION = {
+    "CT": "Northeast",
+    "ME": "Northeast",
+    "MA": "Northeast",
+    "NH": "Northeast",
+    "RI": "Northeast",
+    "VT": "Northeast",
+    "NJ": "Northeast",
+    "NY": "Northeast",
+    "PA": "Northeast",
+    "IL": "Midwest",
+    "IN": "Midwest",
+    "MI": "Midwest",
+    "OH": "Midwest",
+    "WI": "Midwest",
+    "IA": "Midwest",
+    "KS": "Midwest",
+    "MN": "Midwest",
+    "MO": "Midwest",
+    "NE": "Midwest",
+    "ND": "Midwest",
+    "SD": "Midwest",
+    "DE": "South",
+    "FL": "South",
+    "GA": "South",
+    "MD": "South",
+    "NC": "South",
+    "SC": "South",
+    "VA": "South",
+    "DC": "South",
+    "WV": "South",
+    "AL": "South",
+    "KY": "South",
+    "MS": "South",
+    "TN": "South",
+    "AR": "South",
+    "LA": "South",
+    "OK": "South",
+    "TX": "South",
+    "AZ": "West",
+    "CO": "West",
+    "ID": "West",
+    "MT": "West",
+    "NV": "West",
+    "NM": "West",
+    "UT": "West",
+    "WY": "West",
+    "AK": "West",
+    "CA": "West",
+    "HI": "West",
+    "OR": "West",
+    "WA": "West",
+}
+
 
 def parse_dates(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
@@ -62,7 +171,44 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
             df["EmployeeStatus"].astype(str).str.lower() == "active"
         ).astype(int)
 
+    for date_col in ["StartDate", "DateofHire"]:
+        if date_col in df.columns:
+            prefix = date_col.replace("Date", "")
+            month = df[date_col].dt.month
+            quarter = df[date_col].dt.quarter
+            df[f"{prefix}_Month"] = month
+            df[f"{prefix}_Quarter"] = quarter
+            df[f"{prefix}_Year"] = df[date_col].dt.year
+            df[f"{prefix}_Month_Sin"] = np.sin(2 * np.pi * month / 12)
+            df[f"{prefix}_Month_Cos"] = np.cos(2 * np.pi * month / 12)
+            df[f"{prefix}_Season"] = month.map(month_to_season)
+
+    if "State" in df.columns:
+        state = df["State"].astype(str).str.upper().str.strip()
+        avg_temp = state.map(STATE_AVG_TEMP_F)
+        df["State_Avg_Temp_F"] = avg_temp
+        df["State_Avg_Temp_C"] = (avg_temp - 32) * 5 / 9
+        df["State_Climate_Region"] = state.map(STATE_REGION).fillna("Unknown")
+        df["State_Temp_Band"] = pd.cut(
+            avg_temp,
+            bins=[-np.inf, 45, 55, 65, np.inf],
+            labels=["Cold", "Cool", "Mild", "Warm"],
+        ).astype("object")
+
     return df
+
+
+def month_to_season(month: float) -> str | None:
+    if pd.isna(month):
+        return None
+    month = int(month)
+    if month in [12, 1, 2]:
+        return "Winter"
+    if month in [3, 4, 5]:
+        return "Spring"
+    if month in [6, 7, 8]:
+        return "Summer"
+    return "Fall"
 
 
 def safe_drop_columns(df: pd.DataFrame, cols_to_drop: list[str]) -> pd.DataFrame:
@@ -114,6 +260,7 @@ def prepare_data(
     split_info = {
         "random_state": RANDOM_STATE,
         "target_column": TARGET_COL,
+        "feature_revision": "seasonality_and_state_temperature_v1",
         "n_total": int(len(df)),
         "n_train": int(len(X_train)),
         "n_val": int(len(X_val)),

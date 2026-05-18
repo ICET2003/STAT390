@@ -2,15 +2,16 @@
   "model": "GradientBoostingClassifier",
   "best_params": {
     "clf__learning_rate": 0.05,
-    "clf__max_depth": 3,
-    "clf__n_estimators": 50
+    "clf__max_depth": 4,
+    "clf__n_estimators": 100,
+    "clf__subsample": 1.0
   },
-  "best_cv_f1_weighted": 0.4111954270984757,
+  "best_cv_f1_weighted": 0.4136164375111273,
   "validation_metrics": {
-    "accuracy": 0.49333333333333335,
-    "f1_weighted": 0.3711226277890721,
-    "precision_weighted": 0.34902092643209387,
-    "recall_weighted": 0.49333333333333335
+    "accuracy": 0.4888888888888889,
+    "f1_weighted": 0.36934779988165284,
+    "precision_weighted": 0.3321353954687288,
+    "recall_weighted": 0.4888888888888889
   },
-  "runtime_seconds": 31.37840986251831
+  "runtime_seconds": 462.632080078125
 }

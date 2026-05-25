@@ -1,0 +1,9 @@
+{
+  "source": "OpenWeatherMap Current Weather API",
+  "api_url": "https://api.openweathermap.org/data/2.5/weather",
+  "api_key_required": true,
+  "location_strategy": "US state capitals by latitude/longitude",
+  "rows": 51,
+  "output_path": "data/weather/state_weather.csv",
+  "note": "Current weather snapshot; not historical 2014 survey-period weather."
+}

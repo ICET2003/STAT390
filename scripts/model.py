@@ -14,14 +14,6 @@ from sklearn.ensemble import (
 )
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import (
-    accuracy_score,
-    classification_report,
-    confusion_matrix,
-    f1_score,
-    precision_score,
-    recall_score,
-)
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, PolynomialFeatures, StandardScaler
 
@@ -172,42 +164,3 @@ def build_hist_gradient_boosting_search_space(
         "clf__l2_regularization": [0.0, 0.1, 1.0],
     }
     return pipeline, param_grid
-
-
-def evaluate_classification(y_true, y_pred) -> dict:
-    return {
-        "accuracy": float(accuracy_score(y_true, y_pred)),
-        "f1_weighted": float(f1_score(y_true, y_pred, average="weighted")),
-        "precision_weighted": float(
-            precision_score(y_true, y_pred, average="weighted")
-        ),
-        "recall_weighted": float(recall_score(y_true, y_pred, average="weighted")),
-    }
-
-
-def build_validation_diagnostics(y_true: pd.Series, model_predictions: dict) -> dict:
-    labels = sorted(y_true.dropna().unique().tolist())
-    diagnostics = {
-        "true_class_distribution": y_true.value_counts().sort_index().astype(int).to_dict(),
-        "models": {},
-    }
-
-    for model_name, y_pred in model_predictions.items():
-        pred_series = pd.Series(y_pred)
-        diagnostics["models"][model_name] = {
-            "predicted_class_distribution": pred_series.value_counts()
-            .sort_index()
-            .astype(int)
-            .to_dict(),
-            "confusion_matrix_labels": labels,
-            "confusion_matrix": confusion_matrix(y_true, y_pred, labels=labels).tolist(),
-            "classification_report": classification_report(
-                y_true,
-                y_pred,
-                labels=labels,
-                output_dict=True,
-                zero_division=0,
-            ),
-        }
-
-    return diagnostics

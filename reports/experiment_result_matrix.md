@@ -1,16 +1,89 @@
 # Experiment-Result Matrix
 
-| ID | Model | Accuracy | Weighted F1 | Weighted Precision | Weighted Recall | Runtime sec | Best CV F1 |
-|---:|---|---:|---:|---:|---:|---:|---:|
-| 1 | LogisticRegression | 0.4933 | 0.3719 | 0.3283 | 0.4933 | 0.11 | n/a |
-| 2 | RandomForestClassifier | 0.4889 | 0.3702 | 0.3299 | 0.4889 | 21.11 | 0.4072 |
-| 3 | PolynomialLogisticRegression | 0.4933 | 0.3697 | 0.3255 | 0.4933 | 3.17 | 0.4134 |
-| 4 | GradientBoostingClassifier | 0.4933 | 0.3711 | 0.3490 | 0.4933 | 31.38 | 0.4112 |
+| run_id | model_index | model | n_features | primary_metric | accuracy | f1_weighted | rmse | mae | r2 | runtime_seconds |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| burnout_index_non_weather | 20 | HistGradientBoostingReg | 21 | 0.7938 | n/a | n/a | 0.8831 | 0.7084 | 0.7938 | 5.6317 |
+| burnout_index_non_weather | 17 | RandomForestReg_full | 21 | 0.7856 | n/a | n/a | 0.9006 | 0.7201 | 0.7856 | 31.5472 |
+| burnout_index_non_weather | 6 | Lasso_alpha001 | 21 | 0.7818 | n/a | n/a | 0.9086 | 0.7298 | 0.7818 | 0.4284 |
+| burnout_index_non_weather | 7 | ElasticNet_alpha001 | 21 | 0.7817 | n/a | n/a | 0.9087 | 0.7299 | 0.7817 | 1.6258 |
+| burnout_index_non_weather | 5 | Lasso_alpha0001 | 21 | 0.7817 | n/a | n/a | 0.9088 | 0.7299 | 0.7817 | 0.8391 |
+| burnout_index_non_weather | 4 | Ridge_alpha10 | 21 | 0.7816 | n/a | n/a | 0.9088 | 0.7300 | 0.7816 | 0.3872 |
+| burnout_index_non_weather | 3 | Ridge_alpha1 | 21 | 0.7816 | n/a | n/a | 0.9088 | 0.7300 | 0.7816 | 0.3657 |
+| burnout_index_non_weather | 2 | LinearRegression | 21 | 0.7816 | n/a | n/a | 0.9088 | 0.7300 | 0.7816 | 0.4759 |
+| burnout_index_non_weather | 11 | LinearSVR_C0.5 | 21 | 0.7816 | n/a | n/a | 0.9090 | 0.7293 | 0.7816 | 1.7981 |
+| burnout_index_non_weather | 12 | LinearSVR_C1 | 21 | 0.7816 | n/a | n/a | 0.9090 | 0.7294 | 0.7816 | 3.2044 |
+| burnout_index_non_weather | 9 | SGDReg_alpha0001 | 21 | 0.7809 | n/a | n/a | 0.9104 | 0.7313 | 0.7809 | 0.5014 |
+| burnout_index_non_weather | 10 | SGDReg_alpha001 | 21 | 0.7808 | n/a | n/a | 0.9105 | 0.7315 | 0.7808 | 0.5374 |
+| burnout_index_non_weather | 8 | ElasticNet_alpha01 | 21 | 0.7777 | n/a | n/a | 0.9171 | 0.7384 | 0.7777 | 0.5825 |
+| burnout_index_non_weather | 16 | RandomForestReg_depth8 | 21 | 0.7600 | n/a | n/a | 0.9528 | 0.7622 | 0.7600 | 12.3253 |
+| burnout_index_non_weather | 19 | GradientBoostingReg | 21 | 0.7585 | n/a | n/a | 0.9558 | 0.7719 | 0.7585 | 26.0227 |
+| burnout_index_non_weather | 18 | ExtraTreesReg_depth8 | 21 | 0.7552 | n/a | n/a | 0.9622 | 0.7720 | 0.7552 | 9.7355 |
+| burnout_index_non_weather | 15 | DecisionTreeReg_depth6 | 21 | 0.7255 | n/a | n/a | 1.0189 | 0.8145 | 0.7255 | 0.9307 |
+| burnout_index_non_weather | 14 | KNNReg_k15 | 21 | 0.5819 | n/a | n/a | 1.2575 | 1.0085 | 0.5819 | 2.5290 |
+| burnout_index_non_weather | 13 | KNNReg_k5 | 21 | 0.5551 | n/a | n/a | 1.2973 | 1.0305 | 0.5551 | 2.1770 |
+| burnout_index_non_weather | 1 | DummyMean | 21 | -0.0001 | n/a | n/a | 1.9449 | 1.5925 | -0.0001 | 0.4595 |
+| burnout_index_weather_augmented | 20 | HistGradientBoostingReg | 23 | 0.7958 | n/a | n/a | 0.8788 | 0.7054 | 0.7958 | 5.6235 |
+| burnout_index_weather_augmented | 17 | RandomForestReg_full | 23 | 0.7866 | n/a | n/a | 0.8984 | 0.7187 | 0.7866 | 34.4459 |
+| burnout_index_weather_augmented | 6 | Lasso_alpha001 | 23 | 0.7819 | n/a | n/a | 0.9083 | 0.7296 | 0.7819 | 0.5055 |
+| burnout_index_weather_augmented | 7 | ElasticNet_alpha001 | 23 | 0.7819 | n/a | n/a | 0.9084 | 0.7297 | 0.7819 | 1.8450 |
+| burnout_index_weather_augmented | 5 | Lasso_alpha0001 | 23 | 0.7818 | n/a | n/a | 0.9085 | 0.7298 | 0.7818 | 0.9566 |
+| burnout_index_weather_augmented | 4 | Ridge_alpha10 | 23 | 0.7818 | n/a | n/a | 0.9085 | 0.7298 | 0.7818 | 0.3992 |
+| burnout_index_weather_augmented | 3 | Ridge_alpha1 | 23 | 0.7818 | n/a | n/a | 0.9085 | 0.7298 | 0.7818 | 0.3968 |
+| burnout_index_weather_augmented | 2 | LinearRegression | 23 | 0.7818 | n/a | n/a | 0.9085 | 0.7298 | 0.7818 | 0.5533 |
+| burnout_index_weather_augmented | 12 | LinearSVR_C1 | 23 | 0.7817 | n/a | n/a | 0.9086 | 0.7290 | 0.7817 | 3.7556 |
+| burnout_index_weather_augmented | 11 | LinearSVR_C0.5 | 23 | 0.7817 | n/a | n/a | 0.9087 | 0.7292 | 0.7817 | 2.1570 |
+| burnout_index_weather_augmented | 9 | SGDReg_alpha0001 | 23 | 0.7810 | n/a | n/a | 0.9101 | 0.7312 | 0.7810 | 0.5634 |
+| burnout_index_weather_augmented | 10 | SGDReg_alpha001 | 23 | 0.7810 | n/a | n/a | 0.9102 | 0.7314 | 0.7810 | 0.5732 |
+| burnout_index_weather_augmented | 8 | ElasticNet_alpha01 | 23 | 0.7778 | n/a | n/a | 0.9168 | 0.7381 | 0.7778 | 0.6624 |
+| burnout_index_weather_augmented | 16 | RandomForestReg_depth8 | 23 | 0.7600 | n/a | n/a | 0.9528 | 0.7623 | 0.7600 | 13.7084 |
+| burnout_index_weather_augmented | 19 | GradientBoostingReg | 23 | 0.7585 | n/a | n/a | 0.9558 | 0.7719 | 0.7585 | 28.8254 |
+| burnout_index_weather_augmented | 18 | ExtraTreesReg_depth8 | 23 | 0.7550 | n/a | n/a | 0.9627 | 0.7725 | 0.7550 | 11.1099 |
+| burnout_index_weather_augmented | 15 | DecisionTreeReg_depth6 | 23 | 0.7256 | n/a | n/a | 1.0188 | 0.8145 | 0.7256 | 1.0129 |
+| burnout_index_weather_augmented | 14 | KNNReg_k15 | 23 | 0.5549 | n/a | n/a | 1.2975 | 1.0454 | 0.5549 | 2.6584 |
+| burnout_index_weather_augmented | 13 | KNNReg_k5 | 23 | 0.5187 | n/a | n/a | 1.3492 | 1.0749 | 0.5187 | 2.4264 |
+| burnout_index_weather_augmented | 1 | DummyMean | 23 | -0.0001 | n/a | n/a | 1.9449 | 1.5925 | -0.0001 | 0.4725 |
+| treatment_non_weather | 20 | HistGradientBoosting | 25 | 0.7962 | 0.7959 | 0.7962 | n/a | n/a | n/a | 1.4550 |
+| treatment_non_weather | 10 | LinearSVC_C1 | 25 | 0.7959 | 0.7959 | 0.7959 | n/a | n/a | n/a | 0.0220 |
+| treatment_non_weather | 4 | Logistic_C10 | 25 | 0.7895 | 0.7891 | 0.7895 | n/a | n/a | n/a | 0.0292 |
+| treatment_non_weather | 2 | Logistic_C0.1 | 25 | 0.7893 | 0.7891 | 0.7893 | n/a | n/a | n/a | 0.0250 |
+| treatment_non_weather | 6 | Ridge_alpha10 | 25 | 0.7893 | 0.7891 | 0.7893 | n/a | n/a | n/a | 0.0222 |
+| treatment_non_weather | 8 | SGDLogistic_alpha001 | 25 | 0.7890 | 0.7891 | 0.7890 | n/a | n/a | n/a | 0.0385 |
+| treatment_non_weather | 5 | Ridge_alpha1 | 25 | 0.7823 | 0.7823 | 0.7823 | n/a | n/a | n/a | 0.0218 |
+| treatment_non_weather | 9 | LinearSVC_C0.5 | 25 | 0.7823 | 0.7823 | 0.7823 | n/a | n/a | n/a | 0.0231 |
+| treatment_non_weather | 15 | RandomForest_depth8 | 25 | 0.7804 | 0.7823 | 0.7804 | n/a | n/a | n/a | 0.3647 |
+| treatment_non_weather | 3 | Logistic_C1 | 25 | 0.7753 | 0.7755 | 0.7753 | n/a | n/a | n/a | 0.0246 |
+| treatment_non_weather | 17 | ExtraTrees_depth8 | 25 | 0.7749 | 0.7755 | 0.7749 | n/a | n/a | n/a | 0.1987 |
+| treatment_non_weather | 16 | RandomForest_full | 25 | 0.7745 | 0.7755 | 0.7745 | n/a | n/a | n/a | 0.3577 |
+| treatment_non_weather | 18 | ExtraTrees_full | 25 | 0.7683 | 0.7687 | 0.7683 | n/a | n/a | n/a | 0.3489 |
+| treatment_non_weather | 13 | DecisionTree_depth4 | 25 | 0.7595 | 0.7619 | 0.7595 | n/a | n/a | n/a | 0.0252 |
+| treatment_non_weather | 19 | GradientBoosting_lr005 | 25 | 0.7522 | 0.7551 | 0.7522 | n/a | n/a | n/a | 0.2435 |
+| treatment_non_weather | 14 | DecisionTree_depth8 | 25 | 0.7487 | 0.7483 | 0.7487 | n/a | n/a | n/a | 0.0256 |
+| treatment_non_weather | 12 | KNN_k15 | 25 | 0.7351 | 0.7347 | 0.7351 | n/a | n/a | n/a | 0.0208 |
+| treatment_non_weather | 11 | KNN_k5 | 25 | 0.6944 | 0.6939 | 0.6944 | n/a | n/a | n/a | 0.0524 |
+| treatment_non_weather | 7 | SGDLogistic_alpha0001 | 25 | 0.6897 | 0.6939 | 0.6897 | n/a | n/a | n/a | 0.0452 |
+| treatment_non_weather | 1 | DummyMostFrequent | 25 | 0.3915 | 0.5510 | 0.3915 | n/a | n/a | n/a | 0.0201 |
+| treatment_weather_augmented | 2 | Logistic_C0.1 | 44 | 0.7963 | 0.7959 | 0.7963 | n/a | n/a | n/a | 0.0514 |
+| treatment_weather_augmented | 10 | LinearSVC_C1 | 44 | 0.7893 | 0.7891 | 0.7893 | n/a | n/a | n/a | 0.0294 |
+| treatment_weather_augmented | 17 | ExtraTrees_depth8 | 44 | 0.7881 | 0.7891 | 0.7881 | n/a | n/a | n/a | 0.2080 |
+| treatment_weather_augmented | 6 | Ridge_alpha10 | 44 | 0.7823 | 0.7823 | 0.7823 | n/a | n/a | n/a | 0.0258 |
+| treatment_weather_augmented | 15 | RandomForest_depth8 | 44 | 0.7815 | 0.7823 | 0.7815 | n/a | n/a | n/a | 0.2746 |
+| treatment_weather_augmented | 16 | RandomForest_full | 44 | 0.7804 | 0.7823 | 0.7804 | n/a | n/a | n/a | 0.3987 |
+| treatment_weather_augmented | 19 | GradientBoosting_lr005 | 44 | 0.7804 | 0.7823 | 0.7804 | n/a | n/a | n/a | 0.3839 |
+| treatment_weather_augmented | 20 | HistGradientBoosting | 44 | 0.7804 | 0.7823 | 0.7804 | n/a | n/a | n/a | 1.7338 |
+| treatment_weather_augmented | 4 | Logistic_C10 | 44 | 0.7757 | 0.7755 | 0.7757 | n/a | n/a | n/a | 0.0632 |
+| treatment_weather_augmented | 5 | Ridge_alpha1 | 44 | 0.7757 | 0.7755 | 0.7757 | n/a | n/a | n/a | 0.0298 |
+| treatment_weather_augmented | 9 | LinearSVC_C0.5 | 44 | 0.7757 | 0.7755 | 0.7757 | n/a | n/a | n/a | 0.0278 |
+| treatment_weather_augmented | 18 | ExtraTrees_full | 44 | 0.7745 | 0.7755 | 0.7745 | n/a | n/a | n/a | 0.3036 |
+| treatment_weather_augmented | 3 | Logistic_C1 | 44 | 0.7690 | 0.7687 | 0.7690 | n/a | n/a | n/a | 0.0514 |
+| treatment_weather_augmented | 8 | SGDLogistic_alpha001 | 44 | 0.7534 | 0.7551 | 0.7534 | n/a | n/a | n/a | 0.0400 |
+| treatment_weather_augmented | 14 | DecisionTree_depth8 | 44 | 0.7522 | 0.7551 | 0.7522 | n/a | n/a | n/a | 0.0275 |
+| treatment_weather_augmented | 13 | DecisionTree_depth4 | 44 | 0.7301 | 0.7347 | 0.7301 | n/a | n/a | n/a | 0.0249 |
+| treatment_weather_augmented | 7 | SGDLogistic_alpha0001 | 44 | 0.7118 | 0.7143 | 0.7118 | n/a | n/a | n/a | 0.0617 |
+| treatment_weather_augmented | 11 | KNN_k5 | 44 | 0.6607 | 0.6599 | 0.6607 | n/a | n/a | n/a | 0.0221 |
+| treatment_weather_augmented | 12 | KNN_k15 | 44 | 0.6145 | 0.6190 | 0.6145 | n/a | n/a | n/a | 0.0220 |
+| treatment_weather_augmented | 1 | DummyMostFrequent | 44 | 0.3915 | 0.5510 | 0.3915 | n/a | n/a | n/a | 0.0360 |
 
-## Result Summary
+## Summary
 
-The models are effectively tied on validation accuracy. Logistic regression, polynomial logistic regression, and gradient boosting each reach 0.4933 accuracy, while random forest is slightly lower at 0.4889.
-
-Weighted F1 is also nearly flat across the experiment set, ranging from 0.3697 to 0.3719. The best weighted F1 belongs to the baseline logistic regression, but the margin is too small to treat as a substantive modeling improvement.
-
-The main observable difference is runtime. Logistic regression is much faster than the tree-search models, while gradient boosting is the slowest experiment.
+Each target is run twice: first with non-weather predictors only, then with weather-augmented predictors.
+Classification uses weighted F1 as the primary metric. Burnout-index regression uses R-squared as the primary metric.

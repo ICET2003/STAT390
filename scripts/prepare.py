@@ -15,7 +15,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 
-DATA_PATH = Path("data/employee_data.csv")
+DATA_PATH = Path("data/raw/employee_data.csv")
 PROCESSED_DIR = Path("data/processed")
 RESULTS_DIR = Path("results")
 RANDOM_STATE = 42

@@ -1,83 +1,265 @@
-# Employee Baseline Project 
+# Weather and Worker Burnout Research Pipeline
 
-This repository provides a deterministic, end-to-end baseline for predicting **Current Employee Rating** from the employee dataset. This baseline does not include the **local weather** of each state in USA yet. This is a baseline for predicitng the Burout Rating with 1 being very burnout and 5 being productive.
+This project studies whether weather exposure improves prediction of worker burnout beyond HR and demographic information. The current implementation contains a reproducible employee-rating baseline; the planned research pipeline extends it into burnout index construction, weather integration, weather-augmented modeling, and heterogeneous effect analysis.
 
-The final project intends to include the weather dataset into predictive analysis, hoping to calculate the SHAP value of each regressor to prove the importance of environment on burning out. The final model should be more accurated than the baseline model to be considered successful.
+## Research Goal
 
-## Target
-- **Outcome variable:** `Current Employee Rating`
-- **Model:** Logistic Regression (Multi-Class) baseline
-- **Why this target:** numeric discrete 1 to 5 rating makes accuracy a natural, stable validation metric.
+Quantify how weather exposure affects worker burnout and test whether environmental conditions improve predictive burnout modeling.
 
-## What is excluded from the baseline
-- `Performance Score` is excluded because it is too close to the target and can create leakage.
-- `EmpID`, names, and email are excluded because they are identifiers rather than useful generalizable predictors.
-- `TerminationDescription` is excluded in the first baseline because it is sparse free text and can make the first evaluator unstable.
+Primary comparison:
 
-## Locked evaluation rule
-During the search phase, the agent may only evaluate on the **validation set (15% of dataset)**.
-The **final test set (15% of dataset)** is saved and must not be accessed until the very end of the project.
-
-## Deterministic split
-- Train: 70%
-- Validation: 15%
-- Test: 15%
-- Random seed: `42`
-
-The exact split indices are saved under `data/processed/`.
-- X_train: Training Data Regressors
-- y_train: Dependent Variable of Training Set
-- X_val: Validation Data Regressors
-- y_val: Dependent Variable of validation set
-
-## Repository structure (Now only baseline file of py exists)
 ```text
-employee_baseline_project/
+BurnoutIndex ~ HR + Demographics
+BurnoutIndex ~ HR + Demographics + Weather
+```
+
+Weather variables must not be used to construct the burnout index. Weather is an explanatory input in later models, so including it inside the outcome would create leakage and circular prediction.
+
+## Stage 1: Burnout Index Construction
+
+Construct a burnout index from burnout-related workplace variables only.
+
+Potential burnout indicators:
+
+- Stress level
+- Fatigue
+- Overtime hours
+- Absenteeism
+- Job satisfaction
+- Disengagement
+- Turnover intention
+- Productivity decline
+
+Methodology options:
+
+- Standardized weighted sum
+- Principal Component Analysis, implemented in `scripts/burnout_index.py`
+- Factor analysis
+
+Correct setup:
+
+```text
+BurnoutIndex = f(stress, fatigue, satisfaction, absenteeism)
+```
+
+Incorrect setup:
+
+```text
+BurnoutIndex = f(stress, fatigue, weather)
+```
+
+## Stage 2: Weather Data Integration
+
+Merge worker observations with weather data using available geography.
+
+Potential geographic levels:
+
+- ZIP code
+- County
+- Metropolitan area
+- State
+
+Potential weather variables:
+
+- Temperature
+- Humidity
+- Precipitation
+- Heat index
+- Wind speed
+- Sunlight duration
+- Extreme weather indicators
+- Lagged heat exposure
+
+Potential data sources:
+
+- NOAA
+- Open-Meteo
+- Meteostat
+- ERA5
+- State-level climate datasets
+
+The current implementation follows the same state-level merge pattern as the `Weather-Effects-on-Mental-Health` reference project: clean the mental-health survey, standardize state codes, then merge weather features by state.
+
+## Stage 3: Baseline Modeling
+
+Predict burnout using HR and demographic variables only.
+
+Potential models:
+
+- Linear regression
+- Logistic regression, if the outcome is categorized
+- Random forest
+- XGBoost or gradient boosting
+
+The current baseline predicts `Current Employee Rating` as a proxy outcome until the final burnout index is available.
+
+## Stage 4: Weather-Augmented Modeling
+
+Add weather variables and compare incremental predictive value.
+
+Metrics:
+
+- R-squared, for regression
+- RMSE
+- MAE
+- Classification accuracy/F1, if categorized
+- Feature importance
+- SHAP values
+
+## Stage 5: Heterogeneous Effect Analysis
+
+Test whether weather effects differ across worker groups.
+
+Potential subgroup analyses:
+
+- Indoor vs. outdoor workers
+- Remote vs. in-person workers
+- Income groups
+- Regions or climate zones
+- Age groups
+
+Potential interaction:
+
+```text
+Temperature x OutdoorWorker
+```
+
+## Reproducibility Requirements
+
+- Fixed random seed: `42`
+- Locked test dataset
+- Deterministic train-validation-test split
+- Experiment logging for runtime, hyperparameters, metrics, and preprocessing revisions
+
+## Repository Structure
+
+```text
+project/
 ├── data/
-│   ├── employee_data.csv, weather_data.csv
-│   └── processed/
-│       ├── X_train.csv
-│       ├── X_val.csv
-│       ├── y_train.csv
-│       └── y_val.csv
+│   ├── raw/
+│   ├── processed/
+│   └── weather/
+├── docs/
+├── figures/
+├── notebooks/
+├── reports/
 ├── results/
-│   ├── baseline_metrics.json
-│   └── experiment_log.csv
-|   ├── locked_test_indices.csv
-│   └── split_info.json
-├── src/
-│   ├── config.py
-│   ├── data_processing.py
+├── scripts/
+│   ├── prepare.py
+│   ├── burnout_index.py
+│   ├── weather_merge.py
 │   ├── model.py
-│   ├── evaluation.py
-│   ├── experiment_log.py
-│   └── run_baseline.py
+│   ├── evaluate.py
+│   ├── visualize.py
+│   └── run.py
 ├── requirements.txt
 └── README.md
 ```
 
-## How to run
-From the project root:
+## Script Responsibilities
+
+- `scripts/prepare.py`: cleans the employee dataset, engineers deterministic features, creates locked train/validation/test splits, and writes processed CSV files.
+- `scripts/burnout_index.py`: planned module for PCA, factor analysis, or weighted burnout score construction.
+- `scripts/weather_merge.py`: planned module for geographic weather merges, lagged weather variables, and heat exposure metrics.
+- `scripts/model.py`: model and preprocessing definitions.
+- `scripts/evaluate.py`: validation metrics, confusion matrices, and diagnostic reports.
+- `scripts/visualize.py`: planned module for SHAP plots, feature importance, correlation matrices, and weather-burnout plots.
+- `scripts/run.py`: runs the current baseline experiment suite and writes metrics to `results/`.
+
+## How to Run the Current Baseline
+
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
-python src/run_baseline.py
 ```
 
-## Expected behavior
-The script will:
-1. Load the raw employee dataset
-2. Create deterministic engineered features such as age and tenure
-3. Split data into train, validation, and test using a fixed seed
-4. Train a baseline linear regression model
-5. Report validation RMSE, MAE, and R-squared
-6. Save results and the first experiment log entry
+Build PCA burnout dimensions:
 
-## Output files
-- `results/baseline_metrics.json`: stable evaluator output
-- `results/experiment_log.csv`: experiment tracking
-- `data/processed/split_plan.json`: locked test set policy
+```bash
+python scripts/burnout_index.py
+```
 
-## Notes for the TA
-This baseline is designed to be run with a single command and a fixed random seed.
-No access to the final test set is needed now.
+Default outputs:
+
+- `data/processed/burnout_index.csv`
+- `results/burnout_index_pca_metadata.json`
+
+Merge state-level weather data into the mental-health survey:
+
+```bash
+python scripts/download_weather.py
+python scripts/weather_merge.py
+```
+
+The default downloader uses Open-Meteo historical weather because it does not require an API key and can match the 2014 survey period. To use OpenWeatherMap current weather in the style of the reference notebook, set an API key and choose that provider:
+
+```bash
+OPENWEATHER_API_KEY=your_key python scripts/download_weather.py --provider openweathermap
+python scripts/weather_merge.py
+```
+
+By default, this writes:
+
+- `data/weather/state_weather.csv`
+- `data/processed/survey_weather_merged.csv`
+- `results/weather_download_metadata.json`
+- `results/weather_merge_metadata.json`
+
+If `data/weather/state_weather.csv` exists, it will be used as the weather source. Expected columns include `state_code` plus any of `temperature_f`, `humidity`, `wind_speed`, `sunlight_hours`, `precipitation`, `heat_index`, and `weather_description`. If no weather CSV exists yet, the script uses state-average temperature as a documented fallback so the pipeline remains runnable.
+
+Run the survey model comparison with non-weather features first and weather-augmented features second:
+
+```bash
+python scripts/run_survey_models.py
+```
+
+Default outputs:
+
+- `results/survey_model_comparison.csv`
+- `results/survey_model_comparison_summary.json`
+
+Run the full controlled experiment suite for both targets:
+
+```bash
+python scripts/run_full_experiments.py
+```
+
+This runs 20 model variants for each of these four runs:
+
+- Treatment prediction without weather
+- Treatment prediction with weather
+- Burnout-index prediction without weather
+- Burnout-index prediction with weather
+
+It regenerates the report bundle under `reports/` and appends every completed historical run to `results/historical_experiment_log.csv`.
+
+Run the pipeline from the project root:
+
+```bash
+python scripts/run.py
+```
+
+The script regenerates processed data, trains validation models, and writes metrics and experiment logs under `results/`. The final test set remains locked during model search.
+
+## Expected Contributions
+
+This project contributes to:
+
+- Workplace analytics
+- Labor economics
+- Environmental economics
+- Climate adaptation research
+- Burnout measurement methodology
+
+Potential novel contribution: quantifying whether weather exposure improves burnout prediction and identifying worker groups most vulnerable to environmental conditions.
+
+## Future Extensions
+
+- Panel data methods
+- Causal inference
+- Fixed effects estimation
+- Remote sensing climate exposure
+- Occupational heat vulnerability index
+- Temporal weather shock analysis
+- Firm-level productivity impacts

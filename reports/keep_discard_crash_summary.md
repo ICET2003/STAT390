@@ -1,21 +1,84 @@
 # Keep / Discard / Crash Summary
 
-| Experiment | Status | Decision | Reason |
-|---|---|---|---|
-| LogisticRegression | Complete | Keep | Fastest run, best weighted F1, tied best validation accuracy |
-| RandomForestClassifier | Complete | Discard | Lower validation accuracy than baseline and much slower |
-| PolynomialLogisticRegression | Complete | Discard | Ties accuracy but has lower weighted F1 than baseline |
-| GradientBoostingClassifier | Complete | Discard for now | Ties accuracy but is much slower and does not beat baseline F1 |
-| Expanded tuning plus seasonality/state temperature | Stopped | Crash/stopped | Interrupted before a valid result file was produced |
-
-## Keep
-
-Keep `LogisticRegression` as the current baseline and comparison point. It reaches 0.4933 validation accuracy and 0.3719 weighted F1 in 0.11 seconds.
-
-## Discard
-
-Discard the completed tree and polynomial variants as final candidates for now. They do not create a meaningful validation gain, and the tree models cost substantially more runtime.
-
-## Crash / Stopped
-
-The expanded run with seasonality, temperature proxies, and larger grids was stopped before completion. It should not be cited as evidence for or against the feature change until it completes and writes metrics.
+| run_id | model | primary_metric | decision |
+| --- | --- | --- | --- |
+| treatment_non_weather | DummyMostFrequent | 0.3915 | Discard |
+| treatment_non_weather | Logistic_C0.1 | 0.7893 | Discard |
+| treatment_non_weather | Logistic_C1 | 0.7753 | Discard |
+| treatment_non_weather | Logistic_C10 | 0.7895 | Discard |
+| treatment_non_weather | Ridge_alpha1 | 0.7823 | Discard |
+| treatment_non_weather | Ridge_alpha10 | 0.7893 | Discard |
+| treatment_non_weather | SGDLogistic_alpha0001 | 0.6897 | Discard |
+| treatment_non_weather | SGDLogistic_alpha001 | 0.7890 | Discard |
+| treatment_non_weather | LinearSVC_C0.5 | 0.7823 | Discard |
+| treatment_non_weather | LinearSVC_C1 | 0.7959 | Discard |
+| treatment_non_weather | KNN_k5 | 0.6944 | Discard |
+| treatment_non_weather | KNN_k15 | 0.7351 | Discard |
+| treatment_non_weather | DecisionTree_depth4 | 0.7595 | Discard |
+| treatment_non_weather | DecisionTree_depth8 | 0.7487 | Discard |
+| treatment_non_weather | RandomForest_depth8 | 0.7804 | Discard |
+| treatment_non_weather | RandomForest_full | 0.7745 | Discard |
+| treatment_non_weather | ExtraTrees_depth8 | 0.7749 | Discard |
+| treatment_non_weather | ExtraTrees_full | 0.7683 | Discard |
+| treatment_non_weather | GradientBoosting_lr005 | 0.7522 | Discard |
+| treatment_non_weather | HistGradientBoosting | 0.7962 | Keep |
+| treatment_weather_augmented | DummyMostFrequent | 0.3915 | Discard |
+| treatment_weather_augmented | Logistic_C0.1 | 0.7963 | Keep |
+| treatment_weather_augmented | Logistic_C1 | 0.7690 | Discard |
+| treatment_weather_augmented | Logistic_C10 | 0.7757 | Discard |
+| treatment_weather_augmented | Ridge_alpha1 | 0.7757 | Discard |
+| treatment_weather_augmented | Ridge_alpha10 | 0.7823 | Discard |
+| treatment_weather_augmented | SGDLogistic_alpha0001 | 0.7118 | Discard |
+| treatment_weather_augmented | SGDLogistic_alpha001 | 0.7534 | Discard |
+| treatment_weather_augmented | LinearSVC_C0.5 | 0.7757 | Discard |
+| treatment_weather_augmented | LinearSVC_C1 | 0.7893 | Discard |
+| treatment_weather_augmented | KNN_k5 | 0.6607 | Discard |
+| treatment_weather_augmented | KNN_k15 | 0.6145 | Discard |
+| treatment_weather_augmented | DecisionTree_depth4 | 0.7301 | Discard |
+| treatment_weather_augmented | DecisionTree_depth8 | 0.7522 | Discard |
+| treatment_weather_augmented | RandomForest_depth8 | 0.7815 | Discard |
+| treatment_weather_augmented | RandomForest_full | 0.7804 | Discard |
+| treatment_weather_augmented | ExtraTrees_depth8 | 0.7881 | Discard |
+| treatment_weather_augmented | ExtraTrees_full | 0.7745 | Discard |
+| treatment_weather_augmented | GradientBoosting_lr005 | 0.7804 | Discard |
+| treatment_weather_augmented | HistGradientBoosting | 0.7804 | Discard |
+| burnout_index_non_weather | DummyMean | -0.0001 | Discard |
+| burnout_index_non_weather | LinearRegression | 0.7816 | Discard |
+| burnout_index_non_weather | Ridge_alpha1 | 0.7816 | Discard |
+| burnout_index_non_weather | Ridge_alpha10 | 0.7816 | Discard |
+| burnout_index_non_weather | Lasso_alpha0001 | 0.7817 | Discard |
+| burnout_index_non_weather | Lasso_alpha001 | 0.7818 | Discard |
+| burnout_index_non_weather | ElasticNet_alpha001 | 0.7817 | Discard |
+| burnout_index_non_weather | ElasticNet_alpha01 | 0.7777 | Discard |
+| burnout_index_non_weather | SGDReg_alpha0001 | 0.7809 | Discard |
+| burnout_index_non_weather | SGDReg_alpha001 | 0.7808 | Discard |
+| burnout_index_non_weather | LinearSVR_C0.5 | 0.7816 | Discard |
+| burnout_index_non_weather | LinearSVR_C1 | 0.7816 | Discard |
+| burnout_index_non_weather | KNNReg_k5 | 0.5551 | Discard |
+| burnout_index_non_weather | KNNReg_k15 | 0.5819 | Discard |
+| burnout_index_non_weather | DecisionTreeReg_depth6 | 0.7255 | Discard |
+| burnout_index_non_weather | RandomForestReg_depth8 | 0.7600 | Discard |
+| burnout_index_non_weather | RandomForestReg_full | 0.7856 | Discard |
+| burnout_index_non_weather | ExtraTreesReg_depth8 | 0.7552 | Discard |
+| burnout_index_non_weather | GradientBoostingReg | 0.7585 | Discard |
+| burnout_index_non_weather | HistGradientBoostingReg | 0.7938 | Keep |
+| burnout_index_weather_augmented | DummyMean | -0.0001 | Discard |
+| burnout_index_weather_augmented | LinearRegression | 0.7818 | Discard |
+| burnout_index_weather_augmented | Ridge_alpha1 | 0.7818 | Discard |
+| burnout_index_weather_augmented | Ridge_alpha10 | 0.7818 | Discard |
+| burnout_index_weather_augmented | Lasso_alpha0001 | 0.7818 | Discard |
+| burnout_index_weather_augmented | Lasso_alpha001 | 0.7819 | Discard |
+| burnout_index_weather_augmented | ElasticNet_alpha001 | 0.7819 | Discard |
+| burnout_index_weather_augmented | ElasticNet_alpha01 | 0.7778 | Discard |
+| burnout_index_weather_augmented | SGDReg_alpha0001 | 0.7810 | Discard |
+| burnout_index_weather_augmented | SGDReg_alpha001 | 0.7810 | Discard |
+| burnout_index_weather_augmented | LinearSVR_C0.5 | 0.7817 | Discard |
+| burnout_index_weather_augmented | LinearSVR_C1 | 0.7817 | Discard |
+| burnout_index_weather_augmented | KNNReg_k5 | 0.5187 | Discard |
+| burnout_index_weather_augmented | KNNReg_k15 | 0.5549 | Discard |
+| burnout_index_weather_augmented | DecisionTreeReg_depth6 | 0.7256 | Discard |
+| burnout_index_weather_augmented | RandomForestReg_depth8 | 0.7600 | Discard |
+| burnout_index_weather_augmented | RandomForestReg_full | 0.7866 | Discard |
+| burnout_index_weather_augmented | ExtraTreesReg_depth8 | 0.7550 | Discard |
+| burnout_index_weather_augmented | GradientBoostingReg | 0.7585 | Discard |
+| burnout_index_weather_augmented | HistGradientBoostingReg | 0.7958 | Keep |

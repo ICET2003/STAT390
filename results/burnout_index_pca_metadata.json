@@ -1,0 +1,101 @@
+{
+  "method": "PCA",
+  "input_path": "data/raw/sleep_health_dataset.csv",
+  "output_path": "data/processed/burnout_index.csv",
+  "random_state": 42,
+  "weather_exclusion_terms": [
+    "weather",
+    "temperature",
+    "humidity",
+    "precipitation",
+    "heat",
+    "wind",
+    "sunlight",
+    "season"
+  ],
+  "selected_indicators": [
+    {
+      "canonical_name": "stress_score",
+      "source_column": "stress_score",
+      "direction": 1,
+      "concept": "stress"
+    },
+    {
+      "canonical_name": "work_hours_that_day",
+      "source_column": "work_hours_that_day",
+      "direction": 1,
+      "concept": "workload"
+    },
+    {
+      "canonical_name": "sleep_quality_score",
+      "source_column": "sleep_quality_score",
+      "direction": -1,
+      "concept": "fatigue_proxy"
+    },
+    {
+      "canonical_name": "sleep_duration_hrs",
+      "source_column": "sleep_duration_hrs",
+      "direction": -1,
+      "concept": "rest_deficit_proxy"
+    },
+    {
+      "canonical_name": "felt_rested",
+      "source_column": "felt_rested",
+      "direction": -1,
+      "concept": "fatigue_proxy"
+    },
+    {
+      "canonical_name": "cognitive_performance_score",
+      "source_column": "cognitive_performance_score",
+      "direction": -1,
+      "concept": "productivity_decline_proxy"
+    },
+    {
+      "canonical_name": "sleep_latency_mins",
+      "source_column": "sleep_latency_mins",
+      "direction": 1,
+      "concept": "sleep_disturbance_proxy"
+    },
+    {
+      "canonical_name": "wake_episodes_per_night",
+      "source_column": "wake_episodes_per_night",
+      "direction": 1,
+      "concept": "sleep_disturbance_proxy"
+    },
+    {
+      "canonical_name": "weekend_sleep_diff_hrs",
+      "source_column": "weekend_sleep_diff_hrs",
+      "direction": 1,
+      "concept": "sleep_disruption_proxy"
+    }
+  ],
+  "explained_variance_ratio": [
+    0.41490812864894966,
+    0.11454109608991336
+  ],
+  "components": {
+    "burnout_pc1": {
+      "stress_score": 0.3997409153858744,
+      "work_hours_that_day": 0.2961359455915777,
+      "sleep_quality_score": 0.4704085286947682,
+      "sleep_duration_hrs": 0.40166539889216324,
+      "felt_rested": 0.32566300686745997,
+      "cognitive_performance_score": 0.4501983867986531,
+      "sleep_latency_mins": 0.1543605498499101,
+      "wake_episodes_per_night": 0.1931803046470614,
+      "weekend_sleep_diff_hrs": 0.0032611021918316887
+    },
+    "burnout_pc2": {
+      "stress_score": -0.20581580818095546,
+      "work_hours_that_day": -0.5315700083927624,
+      "sleep_quality_score": 0.16580052976869533,
+      "sleep_duration_hrs": -0.2473529468056256,
+      "felt_rested": 0.09360705811738611,
+      "cognitive_performance_score": 0.10299352648515328,
+      "sleep_latency_mins": 0.378627455472404,
+      "wake_episodes_per_night": 0.650656428272726,
+      "weekend_sleep_diff_hrs": 0.017815661586466486
+    }
+  },
+  "index_definition": "burnout_index is the first principal component."
+}

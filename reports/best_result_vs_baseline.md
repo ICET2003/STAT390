@@ -1,25 +1,12 @@
 # Best Result vs. Baseline
 
-## Baseline
+| run_id | baseline_model | best_model | baseline_primary | best_primary | delta |
+| --- | --- | --- | --- | --- | --- |
+| burnout_index_non_weather | DummyMean | HistGradientBoostingReg | -0.0001 | 0.7938 | 0.7939 |
+| burnout_index_weather_augmented | DummyMean | HistGradientBoostingReg | -0.0001 | 0.7958 | 0.7959 |
+| treatment_non_weather | DummyMostFrequent | HistGradientBoosting | 0.3915 | 0.7962 | 0.4047 |
+| treatment_weather_augmented | DummyMostFrequent | Logistic_C0.1 | 0.3915 | 0.7963 | 0.4048 |
 
-| Model | Accuracy | Weighted F1 | Weighted Precision | Weighted Recall | Runtime sec |
-|---|---:|---:|---:|---:|---:|
-| LogisticRegression | 0.4933 | 0.3719 | 0.3283 | 0.4933 | 0.11 |
+## Decision Rule
 
-## Best Completed Result
-
-The best completed result is still the baseline logistic regression.
-
-| Comparison Model | Accuracy Delta vs Baseline | Weighted F1 Delta vs Baseline | Runtime Delta vs Baseline | Result |
-|---|---:|---:|---:|---|
-| RandomForestClassifier | -0.0044 | -0.0017 | +21.00 sec | Worse |
-| PolynomialLogisticRegression | 0.0000 | -0.0022 | +3.06 sec | Tie on accuracy, worse F1 |
-| GradientBoostingClassifier | 0.0000 | -0.0008 | +31.27 sec | Tie on accuracy, worse F1 |
-
-## Decision
-
-The baseline should remain the best current model. None of the completed alternatives improves validation accuracy, and none improves weighted F1.
-
-## Important Caveat
-
-The seasonality and state temperature feature run was stopped before completion, so it cannot be counted as a valid comparison yet.
+Keep the best model only when it improves the run's primary validation metric over the dummy baseline.

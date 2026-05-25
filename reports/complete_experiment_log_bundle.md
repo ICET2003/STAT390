@@ -2,36 +2,24 @@
 
 ## Bundle Contents
 
-This bundle summarizes the controlled validation experiments completed so far. The locked test set was not used.
-
-- Source log: `results/experiment_log.csv`
-- Metric files: `results/baseline_metrics.json`, `results/random_forest_metrics.json`, `results/polynomial_logistic_metrics.json`, `results/boosted_tree_metrics.json`
-- Diagnostics: `results/validation_diagnostics.json`
-- Split metadata: `results/split_info.json`
-- Locked test indices: `results/locked_test_indices.csv`
+- Source log: `results/historical_experiment_log.csv`
+- Latest matrix: `reports/experiment_result_matrix.csv`
 - Result matrix: `reports/experiment_result_matrix.md`
-- Metric plot: `reports/metric_trajectory_plot.svg`
+- Metric plots: `reports/metric_trajectory_plot.svg`, `reports/metric_over_time_plot.svg`
 - Keep/discard/crash summary: `reports/keep_discard_crash_summary.md`
 - Best result comparison: `reports/best_result_vs_baseline.md`
-- Worked memo: `reports/what_actually_worked_memo.md`
 
-## Completed Experiment Log
+## Latest Best Models
 
-| ID | Status | Model | Controlled Change | Validation Accuracy | Weighted F1 | Runtime sec | Decision |
-|---:|---|---|---|---:|---:|---:|---|
-| 1 | Complete | LogisticRegression | Baseline linear classifier | 0.4933 | 0.3719 | 0.11 | Keep as baseline |
-| 2 | Complete | RandomForestClassifier | Tuned nonlinear bagged trees | 0.4889 | 0.3702 | 21.11 | Discard |
-| 3 | Complete | PolynomialLogisticRegression | Degree-2 numeric interactions | 0.4933 | 0.3697 | 3.17 | Discard |
-| 4 | Complete | GradientBoostingClassifier | Tuned sequential boosted trees | 0.4933 | 0.3711 | 31.38 | Discard for now |
-| 5 | Stopped | Expanded tuning plus seasonality/state temperature features | Added feature revision and larger grids | n/a | n/a | n/a | Crash/stopped, not valid evidence |
+| run_id | target | task_type | model | primary_metric | accuracy | f1_weighted | rmse | mae | r2 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| burnout_index_non_weather | burnout_index | regression | HistGradientBoostingReg | 0.7938 | n/a | n/a | 0.8831 | 0.7084 | 0.7938 |
+| burnout_index_weather_augmented | burnout_index | regression | HistGradientBoostingReg | 0.7958 | n/a | n/a | 0.8788 | 0.7054 | 0.7958 |
+| treatment_non_weather | sought_treatment | classification | HistGradientBoosting | 0.7962 | 0.7959 | 0.7962 | n/a | n/a | n/a |
+| treatment_weather_augmented | sought_treatment | classification | Logistic_C0.1 | 0.7963 | 0.7959 | 0.7963 | n/a | n/a | n/a |
 
 ## Reproducibility Rules
 
-- Use only validation metrics for model search.
-- Do not evaluate on the locked test set until final model selection.
-- Treat stopped or interrupted runs as invalid until they complete and write metrics.
-- Compare future experiments against experiment 1 unless a new baseline is explicitly declared.
-
-## Current Conclusion
-
-No completed experiment beats the baseline in a meaningful way. The baseline logistic regression has the best weighted F1 and ties the best validation accuracy while running much faster than the tuned tree models.
+- Fixed random seed: `42`.
+- Latest runs use validation metrics only.
+- Historical runs are appended to `results/historical_experiment_log.csv`.

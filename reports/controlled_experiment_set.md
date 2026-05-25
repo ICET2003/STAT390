@@ -1,36 +1,91 @@
 # Controlled Experiment Set
 
-## Experimental Control
+- `treatment_non_weather`: predict whether the respondent sought treatment using survey variables only.
+- `treatment_weather_augmented`: add state-level weather features.
+- `burnout_index_non_weather`: predict PCA burnout index without PCA source variables or weather variables.
+- `burnout_index_weather_augmented`: add weather variables from the sleep dataset.
 
-All experiments use the same frozen validation protocol:
+Each run uses the same fixed random seed and the same validation split policy.
 
-- Dataset: `data/employee_data.csv`
-- Target: `Current Employee Rating`
-- Random seed: `42`
-- Split: 70% train, 15% validation, 15% locked test
-- Search rule: only validation results are used during model selection
-- Locked test rule: test indices are saved in `results/locked_test_indices.csv` and are not evaluated during the search phase
-- Shared preprocessing: median imputation and scaling for numeric features; most-frequent imputation and one-hot encoding for categorical features
-- Leakage controls: identifiers, personal fields, employment status leakage fields, and `Performance Score` are excluded
-
-## Experiment Set
-
-| Experiment ID | Model | Controlled Change | Search Space | Selection Metric |
-|---:|---|---|---|---|
-| 1 | LogisticRegression | Baseline linear classifier | No grid search | Accuracy |
-| 2 | RandomForestClassifier | Nonlinear bagged tree model | `n_estimators`, `max_depth`, `min_samples_leaf`, `max_features` | Weighted F1 |
-| 3 | PolynomialLogisticRegression | Logistic regression with degree-2 numeric interactions | `C`, `class_weight` | Weighted F1 |
-| 4 | GradientBoostingClassifier | Sequential boosted tree model | `n_estimators`, `learning_rate`, `max_depth` | Weighted F1 |
-
-## Best Hyperparameters
-
-| Experiment ID | Model | Best Parameters |
-|---:|---|---|
-| 1 | LogisticRegression | `max_iter=1000` |
-| 2 | RandomForestClassifier | `max_depth=None`, `max_features='sqrt'`, `min_samples_leaf=1`, `n_estimators=100` |
-| 3 | PolynomialLogisticRegression | `C=1.0`, `class_weight=None` |
-| 4 | GradientBoostingClassifier | `learning_rate=0.05`, `max_depth=3`, `n_estimators=50` |
-
-## Interpretation Rule
-
-The controlled comparison asks whether changing only the model family or numeric interaction structure improves validation performance under the same split and preprocessing regime. Because validation accuracy is effectively tied across three models and weighted F1 remains around 0.37 for every model, the current evidence does not support a meaningful improvement over the baseline.
+| run_id | target | task_type | model_index | model | status |
+| --- | --- | --- | --- | --- | --- |
+| treatment_non_weather | sought_treatment | classification | 1 | DummyMostFrequent | complete |
+| treatment_non_weather | sought_treatment | classification | 2 | Logistic_C0.1 | complete |
+| treatment_non_weather | sought_treatment | classification | 3 | Logistic_C1 | complete |
+| treatment_non_weather | sought_treatment | classification | 4 | Logistic_C10 | complete |
+| treatment_non_weather | sought_treatment | classification | 5 | Ridge_alpha1 | complete |
+| treatment_non_weather | sought_treatment | classification | 6 | Ridge_alpha10 | complete |
+| treatment_non_weather | sought_treatment | classification | 7 | SGDLogistic_alpha0001 | complete |
+| treatment_non_weather | sought_treatment | classification | 8 | SGDLogistic_alpha001 | complete |
+| treatment_non_weather | sought_treatment | classification | 9 | LinearSVC_C0.5 | complete |
+| treatment_non_weather | sought_treatment | classification | 10 | LinearSVC_C1 | complete |
+| treatment_non_weather | sought_treatment | classification | 11 | KNN_k5 | complete |
+| treatment_non_weather | sought_treatment | classification | 12 | KNN_k15 | complete |
+| treatment_non_weather | sought_treatment | classification | 13 | DecisionTree_depth4 | complete |
+| treatment_non_weather | sought_treatment | classification | 14 | DecisionTree_depth8 | complete |
+| treatment_non_weather | sought_treatment | classification | 15 | RandomForest_depth8 | complete |
+| treatment_non_weather | sought_treatment | classification | 16 | RandomForest_full | complete |
+| treatment_non_weather | sought_treatment | classification | 17 | ExtraTrees_depth8 | complete |
+| treatment_non_weather | sought_treatment | classification | 18 | ExtraTrees_full | complete |
+| treatment_non_weather | sought_treatment | classification | 19 | GradientBoosting_lr005 | complete |
+| treatment_non_weather | sought_treatment | classification | 20 | HistGradientBoosting | complete |
+| treatment_weather_augmented | sought_treatment | classification | 1 | DummyMostFrequent | complete |
+| treatment_weather_augmented | sought_treatment | classification | 2 | Logistic_C0.1 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 3 | Logistic_C1 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 4 | Logistic_C10 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 5 | Ridge_alpha1 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 6 | Ridge_alpha10 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 7 | SGDLogistic_alpha0001 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 8 | SGDLogistic_alpha001 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 9 | LinearSVC_C0.5 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 10 | LinearSVC_C1 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 11 | KNN_k5 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 12 | KNN_k15 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 13 | DecisionTree_depth4 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 14 | DecisionTree_depth8 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 15 | RandomForest_depth8 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 16 | RandomForest_full | complete |
+| treatment_weather_augmented | sought_treatment | classification | 17 | ExtraTrees_depth8 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 18 | ExtraTrees_full | complete |
+| treatment_weather_augmented | sought_treatment | classification | 19 | GradientBoosting_lr005 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 20 | HistGradientBoosting | complete |
+| burnout_index_non_weather | burnout_index | regression | 1 | DummyMean | complete |
+| burnout_index_non_weather | burnout_index | regression | 2 | LinearRegression | complete |
+| burnout_index_non_weather | burnout_index | regression | 3 | Ridge_alpha1 | complete |
+| burnout_index_non_weather | burnout_index | regression | 4 | Ridge_alpha10 | complete |
+| burnout_index_non_weather | burnout_index | regression | 5 | Lasso_alpha0001 | complete |
+| burnout_index_non_weather | burnout_index | regression | 6 | Lasso_alpha001 | complete |
+| burnout_index_non_weather | burnout_index | regression | 7 | ElasticNet_alpha001 | complete |
+| burnout_index_non_weather | burnout_index | regression | 8 | ElasticNet_alpha01 | complete |
+| burnout_index_non_weather | burnout_index | regression | 9 | SGDReg_alpha0001 | complete |
+| burnout_index_non_weather | burnout_index | regression | 10 | SGDReg_alpha001 | complete |
+| burnout_index_non_weather | burnout_index | regression | 11 | LinearSVR_C0.5 | complete |
+| burnout_index_non_weather | burnout_index | regression | 12 | LinearSVR_C1 | complete |
+| burnout_index_non_weather | burnout_index | regression | 13 | KNNReg_k5 | complete |
+| burnout_index_non_weather | burnout_index | regression | 14 | KNNReg_k15 | complete |
+| burnout_index_non_weather | burnout_index | regression | 15 | DecisionTreeReg_depth6 | complete |
+| burnout_index_non_weather | burnout_index | regression | 16 | RandomForestReg_depth8 | complete |
+| burnout_index_non_weather | burnout_index | regression | 17 | RandomForestReg_full | complete |
+| burnout_index_non_weather | burnout_index | regression | 18 | ExtraTreesReg_depth8 | complete |
+| burnout_index_non_weather | burnout_index | regression | 19 | GradientBoostingReg | complete |
+| burnout_index_non_weather | burnout_index | regression | 20 | HistGradientBoostingReg | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 1 | DummyMean | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 2 | LinearRegression | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 3 | Ridge_alpha1 | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 4 | Ridge_alpha10 | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 5 | Lasso_alpha0001 | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 6 | Lasso_alpha001 | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 7 | ElasticNet_alpha001 | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 8 | ElasticNet_alpha01 | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 9 | SGDReg_alpha0001 | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 10 | SGDReg_alpha001 | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 11 | LinearSVR_C0.5 | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 12 | LinearSVR_C1 | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 13 | KNNReg_k5 | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 14 | KNNReg_k15 | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 15 | DecisionTreeReg_depth6 | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 16 | RandomForestReg_depth8 | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 17 | RandomForestReg_full | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 18 | ExtraTreesReg_depth8 | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 19 | GradientBoostingReg | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 20 | HistGradientBoostingReg | complete |

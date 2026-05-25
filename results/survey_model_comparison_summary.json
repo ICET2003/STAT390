@@ -1,0 +1,118 @@
+{
+  "target": "sought_treatment",
+  "input_path": "data/processed/survey_weather_merged.csv",
+  "random_state": 42,
+  "runs": {
+    "non_weather_only": {
+      "validation_class_distribution": {
+        "0": 66,
+        "1": 81
+      },
+      "feature_columns": [
+        "age",
+        "gender",
+        "state",
+        "self_employed",
+        "family_history",
+        "work_interfere",
+        "no_employees",
+        "remote_work",
+        "tech_company",
+        "benefits",
+        "care_options",
+        "wellness_program",
+        "seek_help",
+        "anonymity",
+        "leave",
+        "mental_health_consequence",
+        "phys_health_consequence",
+        "coworkers",
+        "supervisor",
+        "mental_health_interview",
+        "phys_health_interview",
+        "mental_vs_physical",
+        "obs_consequence",
+        "state_code",
+        "gender_clean"
+      ]
+    },
+    "weather_augmented": {
+      "validation_class_distribution": {
+        "0": 66,
+        "1": 81
+      },
+      "feature_columns": [
+        "age",
+        "gender",
+        "state",
+        "self_employed",
+        "family_history",
+        "work_interfere",
+        "no_employees",
+        "remote_work",
+        "tech_company",
+        "benefits",
+        "care_options",
+        "wellness_program",
+        "seek_help",
+        "anonymity",
+        "leave",
+        "mental_health_consequence",
+        "phys_health_consequence",
+        "coworkers",
+        "supervisor",
+        "mental_health_interview",
+        "phys_health_interview",
+        "mental_vs_physical",
+        "obs_consequence",
+        "state_code",
+        "gender_clean",
+        "temperature_f",
+        "temperature_c",
+        "feels_like_f",
+        "temperature_min_f",
+        "temperature_max_f",
+        "humidity",
+        "pressure_hpa",
+        "visibility_m",
+        "cloud_cover",
+        "wind_speed",
+        "wind_direction",
+        "wind_gust",
+        "rain_1h",
+        "sunlight_hours",
+        "timezone_offset_seconds",
+        "city",
+        "latitude",
+        "longitude",
+        "retrieved_at_utc"
+      ]
+    }
+  },
+  "best_by_run": [
+    {
+      "run_name": "non_weather_only",
+      "model": "LinearSVC",
+      "n_features": 25,
+      "n_train": 588,
+      "n_validation": 147,
+      "runtime_seconds": 0.0236661434173584,
+      "accuracy": 0.7959183673469388,
+      "f1_weighted": 0.7959183673469388,
+      "precision_weighted": 0.7959183673469388,
+      "recall_weighted": 0.7959183673469388
+    },
+    {
+      "run_name": "weather_augmented",
+      "model": "LinearSVC",
+      "n_features": 44,
+      "n_train": 588,
+      "n_validation": 147,
+      "runtime_seconds": 0.032536983489990234,
+      "accuracy": 0.7891156462585034,
+      "f1_weighted": 0.7892535242276053,
+      "precision_weighted": 0.7894646664636004,
+      "recall_weighted": 0.7891156462585034
+    }
+  ]
+}

@@ -17,6 +17,8 @@ from model import (
     build_polynomial_logistic_search_space,
     build_random_forest_search_space,
     build_tuned_logistic_search_space,
+)
+from evaluate import (
     build_validation_diagnostics,
     evaluate_classification,
 )

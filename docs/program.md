@@ -69,7 +69,7 @@ The agent pipeline is organized around reproducible scripts rather than notebook
 - `scripts/evaluate.py`: shared evaluation metrics.
 - `scripts/model.py`: shared preprocessing pipeline.
 
-The current full experiment runs 20 model variants per run across four controlled runs:
+The current full experiment runs 22 model variants per run across four controlled runs:
 
 - treatment without weather
 - treatment with weather
@@ -77,6 +77,8 @@ The current full experiment runs 20 model variants per run across four controlle
 - burnout index with weather
 
 The runner appends all runs to `results/historical_experiment_log.csv` so historical results are preserved instead of overwritten.
+
+A focused follow-up pass in `scripts/improve_and_importance.py` tests a smaller set of tuned candidate models and computes permutation importance for the best pipeline in each run. This is used for interpretation, not for changing the controlled experiment design.
 
 ## Current Findings
 
@@ -87,7 +89,14 @@ Latest controlled experiment:
 | `sought_treatment` weighted F1 | 0.7962 | 0.7963 | Weather adds a negligible improvement. |
 | `burnout_index` R-squared | 0.7938 | 0.7958 | Weather adds a small improvement. |
 
-The current evidence suggests weather may add some predictive value, but the effect is small under the current state-level design.
+Focused improvement pass:
+
+| Target | Non-weather best | Weather best | Interpretation |
+|---|---:|---:|---|
+| `sought_treatment` weighted F1 | 0.7959 | 0.7897 | The focused candidates did not improve treatment prediction. |
+| `burnout_index` R-squared | 0.7944 | 0.7962 | Tuned histogram gradient boosting slightly improves burnout prediction. |
+
+The current evidence suggests weather may add some predictive value, but the effect is small under the current state-level design. The strongest predictors are still work, sleep, and health-related variables. Weather variables such as wind gust, pressure, and room temperature appear in importance results, but their incremental contribution is limited.
 
 ## Main Limitation
 

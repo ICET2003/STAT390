@@ -1,5 +1,5 @@
 {
-  "run_timestamp": "2026-05-18T21:55:58+00:00",
+  "run_timestamp": "2026-05-25T02:30:58+00:00",
   "random_state": 42,
   "runs": [
     {
@@ -8,7 +8,7 @@
       "task_type": "classification",
       "rows": 735,
       "features": 25,
-      "completed": 20,
+      "completed": 22,
       "failed": 0
     },
     {
@@ -17,7 +17,7 @@
       "task_type": "classification",
       "rows": 735,
       "features": 44,
-      "completed": 20,
+      "completed": 22,
       "failed": 0
     },
     {
@@ -26,7 +26,7 @@
       "task_type": "regression",
       "rows": 100000,
       "features": 21,
-      "completed": 20,
+      "completed": 22,
       "failed": 0
     },
     {
@@ -35,13 +35,13 @@
       "task_type": "regression",
       "rows": 100000,
       "features": 23,
-      "completed": 20,
+      "completed": 22,
       "failed": 0
     }
   ],
   "best_by_run": [
     {
-      "run_timestamp": "2026-05-18T21:57:42+00:00",
+      "run_timestamp": "2026-05-25T02:32:50+00:00",
       "run_id": "burnout_index_non_weather",
       "target": "burnout_index",
       "task_type": "regression",
@@ -52,7 +52,7 @@
       "n_validation": 20000,
       "random_state": 42,
       "status": "complete",
-      "runtime_seconds": 5.631730079650879,
+      "runtime_seconds": 5.5174479484558105,
       "primary_metric": 0.7938052716439359,
       "accuracy": NaN,
       "f1_weighted": NaN,
@@ -64,7 +64,7 @@
       "error": null
     },
     {
-      "run_timestamp": "2026-05-18T21:59:35+00:00",
+      "run_timestamp": "2026-05-25T02:34:53+00:00",
       "run_id": "burnout_index_weather_augmented",
       "target": "burnout_index",
       "task_type": "regression",
@@ -75,7 +75,7 @@
       "n_validation": 20000,
       "random_state": 42,
       "status": "complete",
-      "runtime_seconds": 5.623483896255493,
+      "runtime_seconds": 7.120911121368408,
       "primary_metric": 0.7958401623394091,
       "accuracy": NaN,
       "f1_weighted": NaN,
@@ -87,7 +87,7 @@
       "error": null
     },
     {
-      "run_timestamp": "2026-05-18T21:56:00+00:00",
+      "run_timestamp": "2026-05-25T02:31:01+00:00",
       "run_id": "treatment_non_weather",
       "target": "sought_treatment",
       "task_type": "classification",
@@ -98,7 +98,7 @@
       "n_validation": 147,
       "random_state": 42,
       "status": "complete",
-      "runtime_seconds": 1.455042839050293,
+      "runtime_seconds": 1.6243269443511963,
       "primary_metric": 0.796165854401462,
       "accuracy": 0.7959183673469388,
       "f1_weighted": 0.796165854401462,
@@ -110,7 +110,7 @@
       "error": null
     },
     {
-      "run_timestamp": "2026-05-18T21:56:02+00:00",
+      "run_timestamp": "2026-05-25T02:31:03+00:00",
       "run_id": "treatment_weather_augmented",
       "target": "sought_treatment",
       "task_type": "classification",
@@ -121,7 +121,7 @@
       "n_validation": 147,
       "random_state": 42,
       "status": "complete",
-      "runtime_seconds": 0.05135798454284668,
+      "runtime_seconds": 0.033409833908081055,
       "primary_metric": 0.7963362560213959,
       "accuracy": 0.7959183673469388,
       "f1_weighted": 0.7963362560213959,

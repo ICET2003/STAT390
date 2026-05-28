@@ -26,8 +26,8 @@
 ### Day 4
 
 - Add robustness checks:
-  - remove `state_code` from predictors
   - compare weather vs climate-region-only features
+  - compare variable importance for weather and non-weather models
   - rerun with one alternate random seed if time allows
 
 ### Day 5
@@ -53,12 +53,13 @@
   - ablation table
   - best model comparison
   - weather vs non-weather interpretation
+  - variable-importance interpretation
 
 ### Day 8
 
 - Draft limitations section:
   - state-level weather is coarse
-  - OpenWeatherMap current weather is not survey-period weather
+  - weather effects may be indirect and absorbed by sleep, work, and health variables
   - treatment is mental-health related but not identical to burnout
   - predictive improvement is small
 
@@ -75,7 +76,7 @@
 ### Day 10
 
 - Final cleanup:
-  - rerun `python scripts/run_full_experiments.py`
+  - verify existing `python scripts/run_full_experiments.py` outputs unless results changed
   - verify report files
   - proofread README and project statement
   - prepare final submission
@@ -88,3 +89,4 @@
 - Historical log: `results/historical_experiment_log.csv`
 - Final report bundle: `reports/complete_experiment_log_bundle.md`
 - Final two-week plan: `reports/final_two_week_plan.md`
+- Variable importance report: `reports/variable_importance.md`

@@ -29,6 +29,8 @@ Each run uses the same fixed random seed and the same validation split policy.
 | treatment_non_weather | sought_treatment | classification | 18 | ExtraTrees_full | complete |
 | treatment_non_weather | sought_treatment | classification | 19 | GradientBoosting_lr005 | complete |
 | treatment_non_weather | sought_treatment | classification | 20 | HistGradientBoosting | complete |
+| treatment_non_weather | sought_treatment | classification | 21 | NeuralNet_MLP_32 | complete |
+| treatment_non_weather | sought_treatment | classification | 22 | NeuralNet_MLP_64_32 | complete |
 | treatment_weather_augmented | sought_treatment | classification | 1 | DummyMostFrequent | complete |
 | treatment_weather_augmented | sought_treatment | classification | 2 | Logistic_C0.1 | complete |
 | treatment_weather_augmented | sought_treatment | classification | 3 | Logistic_C1 | complete |
@@ -49,6 +51,8 @@ Each run uses the same fixed random seed and the same validation split policy.
 | treatment_weather_augmented | sought_treatment | classification | 18 | ExtraTrees_full | complete |
 | treatment_weather_augmented | sought_treatment | classification | 19 | GradientBoosting_lr005 | complete |
 | treatment_weather_augmented | sought_treatment | classification | 20 | HistGradientBoosting | complete |
+| treatment_weather_augmented | sought_treatment | classification | 21 | NeuralNet_MLP_32 | complete |
+| treatment_weather_augmented | sought_treatment | classification | 22 | NeuralNet_MLP_64_32 | complete |
 | burnout_index_non_weather | burnout_index | regression | 1 | DummyMean | complete |
 | burnout_index_non_weather | burnout_index | regression | 2 | LinearRegression | complete |
 | burnout_index_non_weather | burnout_index | regression | 3 | Ridge_alpha1 | complete |
@@ -69,6 +73,8 @@ Each run uses the same fixed random seed and the same validation split policy.
 | burnout_index_non_weather | burnout_index | regression | 18 | ExtraTreesReg_depth8 | complete |
 | burnout_index_non_weather | burnout_index | regression | 19 | GradientBoostingReg | complete |
 | burnout_index_non_weather | burnout_index | regression | 20 | HistGradientBoostingReg | complete |
+| burnout_index_non_weather | burnout_index | regression | 21 | NeuralNetReg_MLP_32 | complete |
+| burnout_index_non_weather | burnout_index | regression | 22 | NeuralNetReg_MLP_64_32 | complete |
 | burnout_index_weather_augmented | burnout_index | regression | 1 | DummyMean | complete |
 | burnout_index_weather_augmented | burnout_index | regression | 2 | LinearRegression | complete |
 | burnout_index_weather_augmented | burnout_index | regression | 3 | Ridge_alpha1 | complete |
@@ -89,3 +95,5 @@ Each run uses the same fixed random seed and the same validation split policy.
 | burnout_index_weather_augmented | burnout_index | regression | 18 | ExtraTreesReg_depth8 | complete |
 | burnout_index_weather_augmented | burnout_index | regression | 19 | GradientBoostingReg | complete |
 | burnout_index_weather_augmented | burnout_index | regression | 20 | HistGradientBoostingReg | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 21 | NeuralNetReg_MLP_32 | complete |
+| burnout_index_weather_augmented | burnout_index | regression | 22 | NeuralNetReg_MLP_64_32 | complete |

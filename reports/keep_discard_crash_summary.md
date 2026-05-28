@@ -22,6 +22,8 @@
 | treatment_non_weather | ExtraTrees_full | 0.7683 | Discard |
 | treatment_non_weather | GradientBoosting_lr005 | 0.7522 | Discard |
 | treatment_non_weather | HistGradientBoosting | 0.7962 | Keep |
+| treatment_non_weather | NeuralNet_MLP_32 | 0.7060 | Discard |
+| treatment_non_weather | NeuralNet_MLP_64_32 | 0.7123 | Discard |
 | treatment_weather_augmented | DummyMostFrequent | 0.3915 | Discard |
 | treatment_weather_augmented | Logistic_C0.1 | 0.7963 | Keep |
 | treatment_weather_augmented | Logistic_C1 | 0.7690 | Discard |
@@ -42,6 +44,8 @@
 | treatment_weather_augmented | ExtraTrees_full | 0.7745 | Discard |
 | treatment_weather_augmented | GradientBoosting_lr005 | 0.7804 | Discard |
 | treatment_weather_augmented | HistGradientBoosting | 0.7804 | Discard |
+| treatment_weather_augmented | NeuralNet_MLP_32 | 0.7311 | Discard |
+| treatment_weather_augmented | NeuralNet_MLP_64_32 | 0.7542 | Discard |
 | burnout_index_non_weather | DummyMean | -0.0001 | Discard |
 | burnout_index_non_weather | LinearRegression | 0.7816 | Discard |
 | burnout_index_non_weather | Ridge_alpha1 | 0.7816 | Discard |
@@ -62,6 +66,8 @@
 | burnout_index_non_weather | ExtraTreesReg_depth8 | 0.7552 | Discard |
 | burnout_index_non_weather | GradientBoostingReg | 0.7585 | Discard |
 | burnout_index_non_weather | HistGradientBoostingReg | 0.7938 | Keep |
+| burnout_index_non_weather | NeuralNetReg_MLP_32 | 0.7904 | Discard |
+| burnout_index_non_weather | NeuralNetReg_MLP_64_32 | 0.7878 | Discard |
 | burnout_index_weather_augmented | DummyMean | -0.0001 | Discard |
 | burnout_index_weather_augmented | LinearRegression | 0.7818 | Discard |
 | burnout_index_weather_augmented | Ridge_alpha1 | 0.7818 | Discard |
@@ -82,3 +88,5 @@
 | burnout_index_weather_augmented | ExtraTreesReg_depth8 | 0.7550 | Discard |
 | burnout_index_weather_augmented | GradientBoostingReg | 0.7585 | Discard |
 | burnout_index_weather_augmented | HistGradientBoostingReg | 0.7958 | Keep |
+| burnout_index_weather_augmented | NeuralNetReg_MLP_32 | 0.7913 | Discard |
+| burnout_index_weather_augmented | NeuralNetReg_MLP_64_32 | 0.7893 | Discard |

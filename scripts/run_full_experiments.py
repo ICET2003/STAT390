@@ -48,6 +48,7 @@ from sklearn.linear_model import (
 )
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
+from sklearn.neural_network import MLPClassifier, MLPRegressor
 from sklearn.neighbors import KNeighborsClassifier, KNeighborsRegressor
 from sklearn.pipeline import Pipeline
 from sklearn.svm import LinearSVC, LinearSVR
@@ -141,6 +142,8 @@ def classification_models() -> list[tuple[str, object]]:
         ("ExtraTrees_full", ExtraTreesClassifier(n_estimators=300, min_samples_leaf=2, random_state=RANDOM_STATE, class_weight="balanced", n_jobs=-1)),
         ("GradientBoosting_lr005", GradientBoostingClassifier(n_estimators=150, learning_rate=0.05, max_depth=2, random_state=RANDOM_STATE)),
         ("HistGradientBoosting", HistGradientBoostingClassifier(max_iter=200, learning_rate=0.05, random_state=RANDOM_STATE)),
+        ("NeuralNet_MLP_32", MLPClassifier(hidden_layer_sizes=(32,), alpha=0.001, max_iter=250, early_stopping=True, random_state=RANDOM_STATE)),
+        ("NeuralNet_MLP_64_32", MLPClassifier(hidden_layer_sizes=(64, 32), alpha=0.001, max_iter=250, early_stopping=True, random_state=RANDOM_STATE)),
     ]
 
 
@@ -166,6 +169,8 @@ def regression_models() -> list[tuple[str, object]]:
         ("ExtraTreesReg_depth8", ExtraTreesRegressor(n_estimators=120, max_depth=8, min_samples_leaf=8, random_state=RANDOM_STATE, n_jobs=-1)),
         ("GradientBoostingReg", GradientBoostingRegressor(n_estimators=150, learning_rate=0.05, max_depth=2, random_state=RANDOM_STATE)),
         ("HistGradientBoostingReg", HistGradientBoostingRegressor(max_iter=200, learning_rate=0.05, random_state=RANDOM_STATE)),
+        ("NeuralNetReg_MLP_32", MLPRegressor(hidden_layer_sizes=(32,), alpha=0.001, max_iter=250, early_stopping=True, random_state=RANDOM_STATE)),
+        ("NeuralNetReg_MLP_64_32", MLPRegressor(hidden_layer_sizes=(64, 32), alpha=0.001, max_iter=250, early_stopping=True, random_state=RANDOM_STATE)),
     ]
 
 
@@ -258,6 +263,7 @@ def run_models(
     X_train, X_val, y_train, y_val = split
     completed = []
     failures = []
+    model_count = len(model_specs)
 
     for model_index, (model_name, estimator) in enumerate(model_specs, start=1):
         start = time.time()
@@ -321,7 +327,7 @@ def run_models(
 
             completed.append(row)
             print(
-                f"{run_id} | {model_index:02d}/20 | {model_name} | "
+                f"{run_id} | {model_index:02d}/{model_count} | {model_name} | "
                 f"primary={primary_metric:.4f} | runtime={runtime:.2f}s"
             )
         except Exception as exc:
@@ -342,7 +348,7 @@ def run_models(
                     "error": repr(exc),
                 }
             )
-            print(f"{run_id} | {model_index:02d}/20 | {model_name} | failed: {exc}")
+            print(f"{run_id} | {model_index:02d}/{model_count} | {model_name} | failed: {exc}")
 
     return completed, failures
 
@@ -599,6 +605,7 @@ def write_metric_plot(results: pd.DataFrame, path: Path, title: str) -> None:
 
     groups = list(complete["run_id"].unique())
     colors = ["#2563eb", "#16a34a", "#dc2626", "#9333ea"]
+    max_model_index = max(int(complete["model_index"].max()), 1)
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
         '<rect width="100%" height="100%" fill="white"/>',
@@ -611,7 +618,8 @@ def write_metric_plot(results: pd.DataFrame, path: Path, title: str) -> None:
         group_df = complete[complete["run_id"].eq(group)]
         points = []
         for _, row in group_df.iterrows():
-            x = margin + (row["model_index"] - 1) / 19 * (width - 2 * margin)
+            index_position = 0 if max_model_index == 1 else (row["model_index"] - 1) / (max_model_index - 1)
+            x = margin + index_position * (width - 2 * margin)
             scaled = (row["primary_metric"] - min_metric) / (max_metric - min_metric)
             y = (height - margin) - scaled * (height - 2 * margin)
             points.append((x, y))

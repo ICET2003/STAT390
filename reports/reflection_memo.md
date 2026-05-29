@@ -1,5 +1,7 @@
 # Reflection Memo
 
+**Name:** IceT Thaewanarumitkul
+
 ## What Changed During the Project
 
 The project began as a broad weather-and-worker-burnout prediction task. The main challenge was defining a usable burnout outcome. I created a PCA-based `burnout_index` from non-weather stress, sleep, and work indicators so that weather could later be tested as an explanatory input rather than being built into the target.
@@ -10,7 +12,11 @@ The project then expanded into a controlled experiment design with paired non-we
 
 The most reliable models were histogram gradient boosting and regularized logistic regression. For `burnout_index`, histogram gradient boosting achieved the best results, with the focused weather-augmented model reaching R-squared 0.7962. For `sought_treatment`, the best weather and non-weather runs were nearly tied at about 0.796 weighted F1.
 
+The models improved substantially over the dummy baselines. For `sought_treatment`, the dummy baseline had weighted F1 around 0.3915, while the best treatment models reached about 0.796. For `burnout_index`, the dummy mean regressor had R-squared approximately 0, while the best burnout models reached about 0.796 R-squared. This showed that the project found real predictive structure even though weather itself was only a small part of that structure.
+
 The strongest predictors were not weather variables. For treatment prediction, family history, work interference, care options, and mental-health consequences were more important. For burnout-index prediction, sleep disorder risk, occupation, day type, REM percentage, mental-health condition, and BMI dominated.
+
+The treatment model was the place where weather showed the clearest variable-importance signal. In the weather-augmented treatment model, `wind_gust` was the third most important feature, and `pressure_hpa` also appeared in the top ten. This is why I interpret weather as having some relationship to treatment prediction, even though it did not meaningfully increase the final weighted F1 score.
 
 ## What Did Not Work
 
@@ -24,4 +30,4 @@ The experiment pipeline tracked failures separately from completed model runs. E
 
 ## Final Interpretation
 
-The final conclusion should be cautious: weather variables show weak incremental predictive value, especially for burnout-index regression, but they are not major predictors in this project. The strongest evidence is that burnout and treatment outcomes are better explained by direct work, sleep, and health variables. Weather may still matter indirectly, but the current dataset and validation design do not support a strong claim that weather meaningfully improves prediction.
+The final conclusion should be cautious: weather variables show weak incremental predictive value, especially for burnout-index regression, but they are not major predictors in this project. The strongest evidence is that burnout and treatment outcomes are better explained by direct work, sleep, and health variables. Weather may still matter indirectly, and treatment prediction shows some weather-related importance through wind and pressure, but the current dataset and validation design do not support a strong claim that weather meaningfully improves prediction.

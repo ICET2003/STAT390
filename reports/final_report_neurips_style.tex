@@ -46,6 +46,12 @@ Target & Feature set & Baseline & Best model & Best & Gain \\
 \end{tabular}
 \end{table}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\linewidth]{metric_trajectory_plot.pdf}
+\caption{Metric trajectory across the latest full experiment. Each run shows the best-performing model trajectory over model index.}
+\end{figure}
+
 \section{Results}
 Both treatment models are much better than the dummy baseline. The non-weather treatment run improves from 0.3915 to 0.7962 weighted F1, and the weather-augmented treatment run improves from 0.3915 to 0.7963 weighted F1. This shows that the modeling pipeline finds a strong treatment-prediction signal. The weather-vs-non-weather difference is much smaller: weather adds only about 0.0002 weighted F1 over the best non-weather treatment model.
 
